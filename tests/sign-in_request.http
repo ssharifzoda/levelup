@@ -1,0 +1,8 @@
+### Get token
+POST localhost:9999/auth/sign-in
+Content-Type: application/json
+
+{
+  "username": "Sharifzoda",
+  "password": "qwerty"
+}

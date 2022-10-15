@@ -1,4 +1,4 @@
-package handler
+package handlers
 
 import (
 	"github.com/gin-gonic/gin"
@@ -20,9 +20,9 @@ func (h *Handler) InitRoutes() *gin.Engine {
 		auth.POST("/sign-up", h.signUp)
 		auth.POST("sign-in", h.signIn)
 	}
-	api := router.Group("/api")
+	api := router.Group("/api", h.userIdentity)
 	{
-		diary := api.Group("/list")
+		diary := api.Group("/diary")
 		{
 			diary.POST("/", h.creatDiary)
 			diary.GET("/", h.getAllItem)

@@ -1,0 +1,9 @@
+### Registration
+POST localhost:9999/auth/sign-up
+Content-Type: application/json
+
+{
+  "name": "Sino",
+  "username": "Sharifzoda",
+  "password": "qwerty"
+}
