@@ -22,19 +22,12 @@ func (h *Handler) InitRoutes() *gin.Engine {
 	}
 	api := router.Group("/api", h.userIdentity)
 	{
-		diary := api.Group("/diary")
+		items := api.Group("/item")
 		{
-			diary.POST("/", h.creatDiary)
-			diary.GET("/", h.getAllItem)
-			diary.GET("/:id", h.getDiaryByID)
-			diary.DELETE("/:id", h.deleteDiary)
-			items := diary.Group(":id/items")
-			{
-				items.POST("/", h.creatItem)
-				items.GET("/", h.getAllItem)
-				items.GET("/:item_id", h.getItemByID)
-				items.DELETE(":item_id", h.deleteItem)
-			}
+			items.POST("/", h.creatItem)
+			items.GET("/", h.getAllItem)
+			items.GET("/:item_id", h.getItemByID)
+			items.DELETE(":item_id", h.deleteItem)
 		}
 	}
 	return router

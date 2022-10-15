@@ -10,18 +10,17 @@ type Authorization interface {
 	GetUser(username, password string) (domain.User, error)
 }
 type Diary interface {
-}
-type DiaryItems interface {
+	Create(userId int, item domain.Item) (int, error)
 }
 
 type Database struct {
 	Authorization
 	Diary
-	DiaryItems
 }
 
 func NewDatabase(conn *pgx.Conn) *Database {
 	return &Database{
 		Authorization: NewAuthPostgres(conn),
+		Diary:         NewDiaryItemPostgres(conn),
 	}
 }

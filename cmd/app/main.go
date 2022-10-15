@@ -5,11 +5,10 @@ import (
 	_ "github.com/lib/pq"
 	"github.com/sirupsen/logrus"
 	"github.com/spf13/viper"
+	"github.com/ssharifzoda/levelup/internal/database"
 	handlers2 "github.com/ssharifzoda/levelup/internal/delivery/http/handlers"
-	"github.com/ssharifzoda/levelup/internal/postgres"
 	"github.com/ssharifzoda/levelup/internal/server"
 	"github.com/ssharifzoda/levelup/internal/service"
-	"github.com/ssharifzoda/levelup/pkg/database"
 	"os"
 )
 
@@ -21,7 +20,7 @@ func main() {
 	if err := godotenv.Load(); err != nil {
 		logrus.Fatalf("error initializing env value: %s", err.Error())
 	}
-	conn, err := postgres.NewPostgresDB(postgres.Config{
+	conn, err := database.NewPostgresDB(database.Config{
 		Host:     viper.GetString("db.host"),
 		Port:     viper.GetUint16("db.port"),
 		Username: viper.GetString("db.username"),

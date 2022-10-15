@@ -1,4 +1,4 @@
-package postgres
+package database
 
 import (
 	"context"
@@ -8,9 +8,7 @@ import (
 
 const (
 	usersTable     = "users"
-	diaryListTable = "diary_list"
-	userListTable  = "user_list"
-	diaryItemTable = "diary_items"
+	itemTable      = "item"
 	itemsListTable = "items_list"
 )
 

@@ -1,24 +1,14 @@
 package domain
 
-type DiaryList struct {
-	Id          int    `json:"id"`
-	Title       string `json:"title"`
-	Description string `json:"description"`
-}
-type UserList struct {
-	Id     int
-	UserId int
-	ListId int
+type ItemList struct {
+	Id      int `json:"id"`
+	UserId  int `json:"user_id"`
+	DiaryId int `json:"diary_id"`
 }
 
-type DiaryItem struct {
+type Item struct {
 	Id          int    `json:"id"`
-	Title       string `json:"title"`
-	Description string `json:"description"`
-	Body        string `json:"body"`
-}
-type ListsItem struct {
-	Id     int
-	ListId int
-	ItemId int
+	Title       string `json:"title" binding:"required"`
+	Description string `json:"description" binding:"required"`
+	Body        string `json:"body" binding:"required"`
 }

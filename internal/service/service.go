@@ -1,8 +1,8 @@
 package service
 
 import (
+	"github.com/ssharifzoda/levelup/internal/database"
 	"github.com/ssharifzoda/levelup/internal/domain"
-	"github.com/ssharifzoda/levelup/pkg/database"
 )
 
 type Authorization interface {
@@ -11,18 +11,17 @@ type Authorization interface {
 	ParseToken(token string) (int, error)
 }
 type Diary interface {
-}
-type DiaryItems interface {
+	Create(userId int, item domain.Item) (int, error)
 }
 
 type Service struct {
 	Authorization
 	Diary
-	DiaryItems
 }
 
 func NewService(db *database.Database) *Service {
 	return &Service{
 		Authorization: NewAuthService(db.Authorization),
+		Diary:         NewDiaryService(db.Diary),
 	}
 }

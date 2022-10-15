@@ -1,3 +1,3 @@
 ### Token test_middleware
-POST localhost:9999/api/diary
-Authorization: Bearer {get_token}
+POST localhost:9999/api/item/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjU4NzI0NDAsImlhdCI6MTY2NTgzNjQ0MCwidXNlcl9pZCI6MX0.afdWl9EyqAa1bnKeV8E9tUayBjNCd8tjqCBeyvmMj5o

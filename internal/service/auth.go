@@ -5,8 +5,8 @@ import (
 	"errors"
 	"fmt"
 	"github.com/dgrijalva/jwt-go"
+	"github.com/ssharifzoda/levelup/internal/database"
 	"github.com/ssharifzoda/levelup/internal/domain"
-	"github.com/ssharifzoda/levelup/pkg/database"
 	"time"
 )
 

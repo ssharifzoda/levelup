@@ -1,0 +1,10 @@
+### Create item
+POST localhost:9999/api/item/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjU4ODI2MDIsImlhdCI6MTY2NTg0NjYwMiwidXNlcl9pZCI6MX0.gaQeO0-xtePlmZDLiLogFUHuq5i4MzfT96hCnWGFcak
+Content-Type: application/json
+
+{
+"title": "Сssdfs",
+  "description": "0fsd",
+  "body": "Сейчас пойду ужинать, ибо все заждались...asfkksdfksldfklgkldfgkldfgkdfgkfgkfkgkglkdjglkdjfglksdfkgjsdflkgjskdfjglksdfjglksdjgkjdkfgljdskjglksdgsdkfdsjfkjdskgjdfkgkfghfjkghjkfdhgksjfgkjdfkljdslkfkalsdfklsfk;lsdkf;lsdfk;lsdkfl;asdkfl;skf;lsadkfl;sdfklsdkfl;sdkflsdfkdsl;kflsdkflsdkfl;skdfl;aksflkareogkjrvmnuichfksdfakljrgiorejgihievjskdcmKSlcmLKMFEWJFERJGIHKJDFdc"
+}
