@@ -13,7 +13,7 @@ func (h *Handler) creatItem(c *gin.Context) {
 	}
 	var input domain.Item
 	if err := c.BindJSON(&input); err != nil {
-		NewErrorResponse(c, 403, "incorrect request")
+		NewErrorResponse(c, 400, "incorrect request")
 		return
 	}
 	//call service method

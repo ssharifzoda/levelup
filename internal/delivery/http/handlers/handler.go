@@ -28,6 +28,16 @@ func (h *Handler) InitRoutes() *gin.Engine {
 			items.GET("/", h.getAllItem)
 			items.GET("/:item_id", h.getItemByID)
 			items.DELETE(":item_id", h.deleteItem)
+			//items.GET("/:title", h.getItemByTitle)
+		}
+		badHabits := api.Group("bad-habit")
+		{
+			badHabits.POST("/", h.createHabit)
+			badHabits.GET("/", h.getAllHabits)
+			badHabits.GET("/:habit_id", h.getHabitByID)
+			badHabits.PATCH("/:habit_id", h.doExercise)
+			badHabits.DELETE("/:habit_id", h.deleteHabit)
+
 		}
 	}
 	return router

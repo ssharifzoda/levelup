@@ -22,15 +22,16 @@ create table citations(
     author varchar(255) not null,
     citation text not null
 );
-create table bad_habits(
+create table bad_habit(
     id serial not null unique,
     bad_habit varchar(255) not null,
     equivalent varchar(255) not null,
-    process float,
+    status text,
+    session time,
     registered timestamp not null default current_timestamp
 );
 create table bad_habits_list(
     id serial not null unique,
     user_id int references users(id) on delete cascade not null,
-    bad_habit_id int references bad_habits(id) on delete cascade not null
+    bad_habit_id int references bad_habit(id) on delete cascade not null
 );

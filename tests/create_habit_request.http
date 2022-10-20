@@ -1,0 +1,9 @@
+### Create bad habit
+POST localhost:9999/api/bad-habit/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjYyODkzNDgsImlhdCI6MTY2NjI4ODc0OCwidXNlcl9pZCI6MX0.utLAu8YHcXzAG364BuDuHgkRLeqiou4-hwZAN7Ee0yM
+Content-Type: application/json
+
+{
+  "bad_habit": "Bezdelya",
+  "equivalent": "Delo nayti"
+}

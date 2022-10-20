@@ -16,14 +16,20 @@ type Diary interface {
 	DeleteItemById(userId, itemId int) (string, error)
 }
 
+type BadHabit interface {
+	Create(userId int, input domain.BadHabit) (int, error)
+}
+
 type Database struct {
 	Authorization
 	Diary
+	BadHabit
 }
 
 func NewDatabase(conn *pgx.Conn) *Database {
 	return &Database{
 		Authorization: NewAuthPostgres(conn),
 		Diary:         NewDiaryItemPostgres(conn),
+		BadHabit:      NewBadHabitPostgres(conn),
 	}
 }

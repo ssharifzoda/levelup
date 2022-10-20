@@ -17,15 +17,20 @@ type Diary interface {
 	GetById(userId, itemId int) (domain.Item, error)
 	DeleteItemById(userId, itemId int) (string, error)
 }
+type BadHabit interface {
+	Create(userId int, input domain.BadHabit) (int, error)
+}
 
 type Service struct {
 	Authorization
 	Diary
+	BadHabit
 }
 
 func NewService(db *database.Database) *Service {
 	return &Service{
 		Authorization: NewAuthService(db.Authorization),
 		Diary:         NewDiaryService(db.Diary),
+		BadHabit:      NewBadHabitService(db.BadHabit),
 	}
 }
