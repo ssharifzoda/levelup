@@ -2,7 +2,8 @@ package handlers
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/ssharifzoda/levelup/internal/domain"
+	"github.com/ssharifzoda/levelup/internal/types"
+	"strconv"
 )
 
 func (h *Handler) creatItem(c *gin.Context) {
@@ -24,6 +25,11 @@ func (h *Handler) creatItem(c *gin.Context) {
 		"id": id,
 	})
 }
+
+type getAllItemsResponse struct {
+	Data []domain.Item `json:"data"`
+}
+
 func (h *Handler) getAllItem(c *gin.Context) {
 	userId, err := getUserId(c)
 	if err != nil {
@@ -33,11 +39,37 @@ func (h *Handler) getAllItem(c *gin.Context) {
 	if err != nil {
 		NewErrorResponse(c, 500, err.Error())
 	}
-
+	c.JSON(200, getAllItemsResponse{
+		Data: items,
+	})
 }
 func (h *Handler) getItemByID(c *gin.Context) {
-
+	userId, err := getUserId(c)
+	if err != nil {
+		return
+	}
+	id, err := strconv.Atoi(c.Param("item_id"))
+	if err != nil {
+		NewErrorResponse(c, 403, "invalid id param")
+	}
+	item, err := h.services.Diary.GetById(userId, id)
+	if err != nil {
+		NewErrorResponse(c, 500, err.Error())
+	}
+	c.JSON(200, item)
 }
 func (h *Handler) deleteItem(c *gin.Context) {
-
+	userId, err := getUserId(c)
+	if err != nil {
+		return
+	}
+	id, err := strconv.Atoi(c.Param("item_id"))
+	if err != nil {
+		NewErrorResponse(c, 403, "invalid id param")
+	}
+	text, err := h.services.Diary.DeleteItemById(userId, id)
+	if err != nil {
+		NewErrorResponse(c, 500, err.Error())
+	}
+	c.JSON(200, text)
 }

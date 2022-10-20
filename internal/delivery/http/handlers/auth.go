@@ -2,9 +2,13 @@ package handlers
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/ssharifzoda/levelup/internal/domain"
+	"github.com/sirupsen/logrus"
+	"github.com/ssharifzoda/levelup/internal/types"
 	"net/http"
+	"time"
 )
+
+const Validate = "You are already registered"
 
 func (h *Handler) signUp(c *gin.Context) {
 	var input domain.User
@@ -12,8 +16,19 @@ func (h *Handler) signUp(c *gin.Context) {
 		NewErrorResponse(c, http.StatusBadRequest, err.Error())
 		return
 	}
+	massage, err := h.services.Authorization.Validate(input.Username, input.Password)
+	if massage == Validate && err == nil {
+		c.JSON(400, massage)
+		return
+	}
+	if err != nil {
+		logrus.Println(err)
+		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
+		return
+	}
 	id, err := h.services.Authorization.CreateUser(input)
 	if err != nil {
+		logrus.Println(err)
 		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
 		return
 	}
@@ -23,8 +38,8 @@ func (h *Handler) signUp(c *gin.Context) {
 }
 
 type signInInput struct {
-	Username string `json:"username" binding: "required"`
-	Password string `json:"password" binding: "required"`
+	Username string `json:"username" binding:"required"`
+	Password string `json:"password" binding:"required"`
 }
 
 func (h *Handler) signIn(c *gin.Context) {
@@ -39,6 +54,7 @@ func (h *Handler) signIn(c *gin.Context) {
 		return
 	}
 	c.JSON(200, map[string]interface{}{
-		"token": token,
+		"active until": time.Now().Add(time.Minute * 10).Format(time.Kitchen),
+		"your token":   token,
 	})
 }

@@ -3,7 +3,7 @@ package database
 import (
 	"fmt"
 	"github.com/jackc/pgx"
-	"github.com/ssharifzoda/levelup/internal/domain"
+	"github.com/ssharifzoda/levelup/internal/types"
 )
 
 type AuthPostgres struct {

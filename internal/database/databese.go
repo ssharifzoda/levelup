@@ -2,7 +2,7 @@ package database
 
 import (
 	"github.com/jackc/pgx"
-	"github.com/ssharifzoda/levelup/internal/domain"
+	"github.com/ssharifzoda/levelup/internal/types"
 )
 
 type Authorization interface {
@@ -11,6 +11,9 @@ type Authorization interface {
 }
 type Diary interface {
 	Create(userId int, item domain.Item) (int, error)
+	GetAll(userId int) ([]domain.Item, error)
+	GetById(userId, itemId int) (domain.Item, error)
+	DeleteItemById(userId, itemId int) (string, error)
 }
 
 type Database struct {

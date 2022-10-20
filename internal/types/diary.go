@@ -1,9 +1,9 @@
 package domain
 
 type ItemList struct {
-	Id      int `json:"id"`
-	UserId  int `json:"user_id"`
-	DiaryId int `json:"diary_id"`
+	Id      int `json:"id" db:"id" binding:"required"`
+	UserId  int `json:"user_id" db:"user_id" binding:"required"`
+	DiaryId int `json:"diary_id" db:"diary_id" binding:"required"`
 }
 
 type Item struct {

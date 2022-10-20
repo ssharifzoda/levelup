@@ -1,0 +1,3 @@
+### Get item By ID
+GET localhost:9999/api/item/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjYxNzI1OTEsImlhdCI6MTY2NjE3MTk5MSwidXNlcl9pZCI6MX0.1eCeEOVdLBDEMkyOhc1tSt4ZJfq8sNAFWhdVycMNcRU

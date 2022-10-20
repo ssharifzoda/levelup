@@ -6,14 +6,15 @@ import (
 	"fmt"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/ssharifzoda/levelup/internal/database"
-	"github.com/ssharifzoda/levelup/internal/domain"
+	"github.com/ssharifzoda/levelup/internal/types"
 	"time"
 )
 
 const (
 	salt       = "dfghuiehrgyeg674hgijdnjkashwegf7"
-	tokenTTL   = 10 * time.Hour
+	tokenTTL   = 10 * time.Minute
 	signingKey = "dijuaehrguerygnfkjvnaskfjqhwyfgr654fsdfa"
+	Validate   = "user not registered in database"
 )
 
 type AuthService struct {
@@ -45,6 +46,7 @@ func (a *AuthService) GenerateToken(username, password string) (string, error) {
 			IssuedAt:  time.Now().Unix(),
 		}, user.Id,
 	})
+
 	return token.SignedString([]byte(signingKey))
 }
 
@@ -69,4 +71,11 @@ func (a *AuthService) ParseToken(accessToken string) (int, error) {
 		return 0, errors.New("token claims are not of type")
 	}
 	return claims.UserId, nil
+}
+func (a *AuthService) Validate(username, password string) (string, error) {
+	_, err := a.db.GetUser(username, GeneratePasswordHash(password))
+	if err != nil {
+		return Validate, nil
+	}
+	return "You are already registered", err
 }
