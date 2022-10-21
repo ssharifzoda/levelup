@@ -50,7 +50,7 @@ func (h *Handler) getItemByID(c *gin.Context) {
 	}
 	id, err := strconv.Atoi(c.Param("item_id"))
 	if err != nil {
-		NewErrorResponse(c, 403, "invalid id param")
+		NewErrorResponse(c, 400, "invalid id param")
 	}
 	item, err := h.services.Diary.GetById(userId, id)
 	if err != nil {
@@ -65,7 +65,7 @@ func (h *Handler) deleteItem(c *gin.Context) {
 	}
 	id, err := strconv.Atoi(c.Param("item_id"))
 	if err != nil {
-		NewErrorResponse(c, 403, "invalid id param")
+		NewErrorResponse(c, 400, "invalid id param")
 	}
 	text, err := h.services.Diary.DeleteItemById(userId, id)
 	if err != nil {

@@ -12,7 +12,7 @@ import (
 
 const (
 	salt       = "dfghuiehrgyeg674hgijdnjkashwegf7"
-	tokenTTL   = 10 * time.Minute
+	tokenTTL   = 60 * time.Minute
 	signingKey = "dijuaehrguerygnfkjvnaskfjqhwyfgr654fsdfa"
 	Validate   = "user not registered in database"
 )

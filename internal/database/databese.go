@@ -18,6 +18,10 @@ type Diary interface {
 
 type BadHabit interface {
 	Create(userId int, input domain.BadHabit) (int, error)
+	GetAll(userId int) ([]domain.BadHabit, error)
+	GetById(userId, id int) (domain.BadHabit, error)
+	DeleteHabitById(userId, id int) (string, error)
+	DoExercise(userId, id int, input domain.DoExercise) (string, error)
 }
 
 type Database struct {
