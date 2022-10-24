@@ -1,3 +1,0 @@
-### Get all bad habits
-GET localhost:9999/api/bad-habit/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjYzMDEyNzIsImlhdCI6MTY2NjMwMDY3MiwidXNlcl9pZCI6MX0.mFN0U8gkQJmap9vXbJapFhHIKpDzn8vTSlNlRDhINNU

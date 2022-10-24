@@ -6,10 +6,14 @@ import (
 	"strconv"
 )
 
-const massage = "Your operation completed successfully"
+const (
+	massage               = "Your operation completed successfully"
+	positiveValidCategory = "He did not have this bad habits"
+	negativeValidCategory = "You already have this bad habits"
+)
 
 type GetAllBadHabitsResponse struct {
-	Data []domain.BadHabit `json:"data"`
+	Data []domain.BadHabitOutput `json:"data"`
 }
 
 func (h *Handler) createHabit(c *gin.Context) {
@@ -17,9 +21,15 @@ func (h *Handler) createHabit(c *gin.Context) {
 	if err != nil {
 		return
 	}
-	var input domain.BadHabit
+	var input domain.BadHabitInput
 	if err = c.BindJSON(&input); err != nil {
 		NewErrorResponse(c, 400, "incorrect request")
+		return
+	}
+	//call validate service method
+	text, err := h.services.BadHabit.ValidateCategory(input.HabitCategoryId, userId)
+	if text == negativeValidCategory || err != nil {
+		c.JSON(400, text)
 		return
 	}
 	//call service method
@@ -75,19 +85,6 @@ func (h *Handler) deleteHabit(c *gin.Context) {
 	}
 	c.JSON(200, text)
 }
-func (h *Handler) doExercise(c *gin.Context) {
-	userId, err := getUserId(c)
-	if err != nil {
-		return
-	}
-	id, err := strconv.Atoi(c.Param("habit_id"))
-	if err != nil {
-		NewErrorResponse(c, 400, "invalid id param")
-	}
-	var input domain.DoExercise
-	text, err := h.services.BadHabit.DoExercise(userId, id, input)
-	if err != nil {
-		NewErrorResponse(c, 500, err.Error())
-	}
-	c.JSON(200, text)
+func (h *Handler) editEquivalentByID(c *gin.Context) {
+
 }

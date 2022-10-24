@@ -1,10 +1,12 @@
 package domain
 
-type BadHabit struct {
-	Id         int    `json:"id"`
-	BadHabit   string `json:"bad_habit" binding:"required"`
-	Equivalent string `json:"equivalent" binding:"required"`
-	Session    int    `json:"session"`
+import "time"
+
+type BadHabitInput struct {
+	Id              int       `json:"id"`
+	HabitCategoryId int       `json:"habit_category_id" db:"habit_category_id" binding:"required"`
+	EquivalentId    int       `json:"equivalent_id" db:"equivalent_id" binding:"required"`
+	Created         time.Time `json:"created"`
 }
 type BadHabitsList struct {
 	Id         int `json:"id" db:"id" binding:"required"`
@@ -14,4 +16,18 @@ type BadHabitsList struct {
 type DoExercise struct {
 	Session     int    `json:"session" binding:"required"`
 	LastSession string `json:"last_session"`
+}
+type HabitsCategory struct {
+	Id   int    `json:"id"`
+	Name string `json:"name"`
+}
+type Equivalents struct {
+	Id   int    `json:"id"`
+	Name string `json:"name"`
+}
+type BadHabitOutput struct {
+	Id            int       `json:"id"`
+	HabitCategory string    `json:"habit_category" db:"name"`
+	Equivalent    string    `json:"equivalent" db:"name"`
+	Created       time.Time `json:"created"`
 }

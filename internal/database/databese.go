@@ -8,6 +8,7 @@ import (
 type Authorization interface {
 	CreateUser(user domain.User) (int, error)
 	GetUser(username, password string) (domain.User, error)
+	GetUserById(userId int) (string, string, error)
 }
 type Diary interface {
 	Create(userId int, item domain.Item) (int, error)
@@ -17,11 +18,11 @@ type Diary interface {
 }
 
 type BadHabit interface {
-	Create(userId int, input domain.BadHabit) (int, error)
-	GetAll(userId int) ([]domain.BadHabit, error)
-	GetById(userId, id int) (domain.BadHabit, error)
+	Create(userId int, input domain.BadHabitInput) (int, error)
+	GetAll(userId int) ([]domain.BadHabitOutput, error)
+	GetById(userId, id int) (domain.BadHabitOutput, error)
 	DeleteHabitById(userId, id int) (string, error)
-	DoExercise(userId, id int, input domain.DoExercise) (string, error)
+	GetCategory(categoryId, userId int) (string, error)
 }
 
 type Database struct {

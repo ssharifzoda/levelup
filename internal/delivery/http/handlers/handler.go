@@ -19,6 +19,7 @@ func (h *Handler) InitRoutes() *gin.Engine {
 	{
 		auth.POST("/sign-up", h.signUp)
 		auth.POST("sign-in", h.signIn)
+		auth.GET("/refresh", h.refreshToken)
 	}
 	api := router.Group("/api", h.userIdentity)
 	{
@@ -35,10 +36,16 @@ func (h *Handler) InitRoutes() *gin.Engine {
 			badHabits.POST("/", h.createHabit)
 			badHabits.GET("/", h.getAllHabits)
 			badHabits.GET("/:habit_id", h.getHabitByID)
-			badHabits.PATCH("/:habit_id", h.doExercise)
+			badHabits.PATCH("/:habit_id", h.editEquivalentByID)
 			badHabits.DELETE("/:habit_id", h.deleteHabit)
-
 		}
+		//mentalDev := api.Group("/mental")
+		//{
+		//	//mentalDev.GET("/", h.myInfo)
+		//	mentalDev.POST("/", h.createCourse)
+		//	mentalDev.GET("/:course_id", h.getCourseByID)
+		//	mentalDev.DELETE("/:course_id", h.deleteCourseByID)
+		//}
 	}
 	return router
 }

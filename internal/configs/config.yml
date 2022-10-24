@@ -5,3 +5,7 @@ db:
   Port: 5432
   Username: "app"
   DBName: "zozh"
+
+auth:
+  TokenTTL: 100m
+  RefreshTokenTTL: 1200m

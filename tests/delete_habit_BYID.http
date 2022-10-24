@@ -1,3 +1,0 @@
-### delete habit by ID
-DELETE localhost:9999/api/bad-habit/1
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjYzNTIwNDIsImlhdCI6MTY2NjM1MTQ0MiwidXNlcl9pZCI6MX0.yE431YiFzPMMh_gz72B6KIc8aIfeo5DXKX-3g8oq5hs

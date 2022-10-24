@@ -7,11 +7,15 @@ import (
 )
 
 const (
-	usersTable     = "users"
-	itemTable      = "item"
-	itemsListTable = "items_list"
-	badHabitTable  = "bad_habit"
-	badHabitList   = "bad_habits_list"
+	usersTable            = "users"
+	itemTable             = "item"
+	itemsListTable        = "items_list"
+	badHabitTable         = "bad_habit"
+	badHabitList          = "bad_habits_list"
+	badHabitCategory      = "habits_category"
+	equivalents           = "equivalents"
+	positiveValidCategory = "He did not have this bad habits"
+	negativeValidCategory = "You already have this bad habits"
 )
 
 type Config struct {

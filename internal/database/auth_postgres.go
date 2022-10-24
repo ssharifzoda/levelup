@@ -29,3 +29,10 @@ func (a *AuthPostgres) GetUser(username, password string) (domain.User, error) {
 	err := row.Scan(&user.Id, &user.Username, &user.Password)
 	return user, err
 }
+func (a *AuthPostgres) GetUserById(userId int) (string, string, error) {
+	var username, password string
+	query := fmt.Sprintf("select username, password_hash from %s where id = $1", usersTable)
+	row := a.conn.QueryRow(query, userId)
+	err := row.Scan(&username, &password)
+	return username, password, err
+}

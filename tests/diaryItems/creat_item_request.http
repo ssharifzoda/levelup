@@ -1,0 +1,10 @@
+### Create item
+POST localhost:9999/api/item/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjY2MjIxMjMsImlhdCI6MTY2NjYxODUyMywidXNlcl9pZCI6MX0.I0PA2UED2BBDUh5kjF8KmUZSN7yjUaPAjrVMa179Aiw
+Content-Type: application/json
+
+{
+  "title": "asdds",
+  "description": "Lkad",
+  "body": "В клинике зaкончил, теперь пришёл подготовиться к вечерному уроку.Sasac"
+}

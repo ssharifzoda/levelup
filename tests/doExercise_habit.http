@@ -1,3 +1,0 @@
-### Update session
-PATCH localhost:9999/api/bad-habit/2
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjYzNjIxNDEsImlhdCI6MTY2NjM1ODU0MSwidXNlcl9pZCI6MX0.cXN1GrijBnYmPZcziSK79-OYmYeL-cruZazOEJzXzR4
