@@ -1,6 +1,7 @@
 package service
 
 import (
+	"github.com/spf13/viper"
 	"github.com/ssharifzoda/levelup/internal/database"
 	domain "github.com/ssharifzoda/levelup/internal/types"
 	"os"
@@ -29,18 +30,18 @@ func (m *MentalDevelopmentService) GetById(userId int, id int) (domain.CourseOut
 	if err != nil {
 		return item, err
 	}
-	item.Audio, err = os.ReadFile("D:\\storage\\Confidence\\audio.ogg")
+	item.Audio = viper.GetString("storage.confidence") + audio
 	if err != nil {
 		return item, err
 	}
-	path, _ := os.ReadFile("D:\\storage\\Confidence\\filmpath.txt")
+	path, err := os.ReadFile(viper.GetString("storage.confidence") + filmPath)
 	if err != nil {
 		return item, err
 	}
 	item.FilmPath = string(path)
-	//item.Book, err = os.ReadFile("D:\\storage\\Confidence\\book.epub")
-	//if err != nil {
-	//	return item, err
-	//}
+	item.Book = viper.GetString("storage.confidence") + book
+	if err != nil {
+		return item, err
+	}
 	return item, nil
 }

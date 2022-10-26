@@ -40,11 +40,17 @@ func (h *Handler) InitRoutes() *gin.Engine {
 			badHabits.DELETE("/:habit_id", h.deleteHabit)
 		}
 		mentalDev := api.Group("/mental")
-		//{
-		//mentalDev.GET("/", h.myInfo)
-		mentalDev.POST("/", h.createCourse)
-		mentalDev.GET("/:course_id", h.getCourseByID)
-		mentalDev.DELETE("/:course_id", h.deleteCourseByID)
+		{
+			//mentalDev.GET("/", h.myInfo)
+			mentalDev.POST("/", h.createCourse)
+			course := mentalDev.Group("/course")
+			{
+				course.GET("/:course_id", h.getCourseByID)
+				course.GET("/:course_id/audio", h.getAudio)
+				course.GET("/:course_id/book", h.getBook)
+			}
+			mentalDev.DELETE("/:course_id", h.deleteCourseByID)
+		}
 	}
 	return router
 }

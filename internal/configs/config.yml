@@ -10,4 +10,8 @@ auth:
   TokenTTL: 1000m
   RefreshTokenTTL: 1200m
 
-storage: "D:\\storage\\"
+storage:
+  Confidence: "D:\\storage\\Confidence\\"
+  Difficulty: "D:\\storage\\Difficulty\\"
+  CloseRelations: "D:\\storage\\Close relations\\"
+  SelfAppraisal: "D:\\storage\\Self-appraisal\\"

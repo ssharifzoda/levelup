@@ -1,3 +1,14 @@
 ### get mental course by id
-GET localhost:9999/api/mental/1
+GET localhost:9999/api/mental/course/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjY4NDI4NDMsImlhdCI6MTY2Njc4Mjg0MywidXNlcl9pZCI6MX0.vjb87-UDADqYgrGdIMscpSSgVA_-ULtuYBKST_97T8k
+
+
+### get audio-book of course
+GET localhost:9999/api/mental/course/1/audio
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjY4NDI4NDMsImlhdCI6MTY2Njc4Mjg0MywidXNlcl9pZCI6MX0.vjb87-UDADqYgrGdIMscpSSgVA_-ULtuYBKST_97T8k
+
+
+
+### get book of course
+GET localhost:9999/api/mental/course/1/book
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjY4NDI4NDMsImlhdCI6MTY2Njc4Mjg0MywidXNlcl9pZCI6MX0.vjb87-UDADqYgrGdIMscpSSgVA_-ULtuYBKST_97T8k

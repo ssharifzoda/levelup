@@ -10,10 +10,10 @@ type CourseInput struct {
 	Created          time.Time `json:"created" db:"created"`
 }
 type CourseOutput struct {
-	Id             int    `json:"id" db:"id"`
-	MentalCategory string `json:"mental_category" db:"mental_category_id"`
-	//Audio          zip.File    `json:"audio"`
-	FilmPath string `json:"film_path"`
-	//Book           zip.File    `json:"book"`
-	Created time.Time `json:"created" db:"created"`
+	Id             int       `json:"id" db:"id"`
+	MentalCategory string    `json:"category" db:"mental_category_id"`
+	Audio          string    `json:"audio-book"`
+	FilmPath       string    `json:"film-path"`
+	Book           string    `json:"book-path"`
+	Created        time.Time `json:"created" db:"created"`
 }
