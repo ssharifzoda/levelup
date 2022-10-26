@@ -29,10 +29,10 @@ func (m *MentalDevelopmentService) GetById(userId int, id int) (domain.CourseOut
 	if err != nil {
 		return item, err
 	}
-	//item.Audio, err = os.ReadFile("D:\\storage\\Confidence\\audio.ogg")
-	//if err != nil {
-	//	return item, err
-	//}
+	item.Audio, err = os.ReadFile("D:\\storage\\Confidence\\audio.ogg")
+	if err != nil {
+		return item, err
+	}
 	path, _ := os.ReadFile("D:\\storage\\Confidence\\filmpath.txt")
 	if err != nil {
 		return item, err
