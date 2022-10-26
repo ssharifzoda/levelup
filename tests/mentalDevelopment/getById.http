@@ -1,0 +1,3 @@
+### get mental course by id
+GET localhost:9999/api/mental/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjY4NDI4NDMsImlhdCI6MTY2Njc4Mjg0MywidXNlcl9pZCI6MX0.vjb87-UDADqYgrGdIMscpSSgVA_-ULtuYBKST_97T8k

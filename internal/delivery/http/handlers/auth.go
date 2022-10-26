@@ -5,7 +5,6 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/sirupsen/logrus"
 	"github.com/ssharifzoda/levelup/internal/types"
-	"log"
 	"net/http"
 	"strings"
 	"unicode"
@@ -85,13 +84,10 @@ func (h *Handler) refreshToken(c *gin.Context) {
 	}
 	username, passwordHash, err := h.services.Authorization.ParseRefreshToken(headerParts[1])
 	if err != nil {
-		logrus.Println("wfsdfsd")
 		return
 	}
-	log.Print(username)
 	token, refreshToken, err := h.services.Authorization.GenerateTokens(username, passwordHash)
 	if err != nil {
-		logrus.Println("here")
 		NewErrorResponse(c, http.StatusInternalServerError, err.Error())
 		return
 	}

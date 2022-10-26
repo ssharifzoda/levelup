@@ -7,5 +7,7 @@ db:
   DBName: "zozh"
 
 auth:
-  TokenTTL: 100m
+  TokenTTL: 1000m
   RefreshTokenTTL: 1200m
+
+storage: "D:\\storage\\"

@@ -25,16 +25,23 @@ type BadHabit interface {
 	GetCategory(categoryId, userId int) (string, error)
 }
 
+type MentalDevelopment interface {
+	Create(userId int, input domain.CourseInput) (int, error)
+	GetById(userId int, id int) (domain.CourseOutput, error)
+}
+
 type Database struct {
 	Authorization
 	Diary
 	BadHabit
+	MentalDevelopment
 }
 
 func NewDatabase(conn *pgx.Conn) *Database {
 	return &Database{
-		Authorization: NewAuthPostgres(conn),
-		Diary:         NewDiaryItemPostgres(conn),
-		BadHabit:      NewBadHabitPostgres(conn),
+		Authorization:     NewAuthPostgres(conn),
+		Diary:             NewDiaryItemPostgres(conn),
+		BadHabit:          NewBadHabitPostgres(conn),
+		MentalDevelopment: NewMentalDevelopPostgres(conn),
 	}
 }

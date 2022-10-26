@@ -26,16 +26,23 @@ type BadHabit interface {
 	ValidateCategory(categoryId, userId int) (string, error)
 }
 
+type MentalDevelopment interface {
+	Create(userId int, input domain.CourseInput) (int, error)
+	GetById(userId int, id int) (domain.CourseOutput, error)
+}
+
 type Service struct {
 	Authorization
 	Diary
 	BadHabit
+	MentalDevelopment
 }
 
 func NewService(db *database.Database) *Service {
 	return &Service{
-		Authorization: NewAuthService(db.Authorization),
-		Diary:         NewDiaryService(db.Diary),
-		BadHabit:      NewBadHabitService(db.BadHabit),
+		Authorization:     NewAuthService(db.Authorization),
+		Diary:             NewDiaryService(db.Diary),
+		BadHabit:          NewBadHabitService(db.BadHabit),
+		MentalDevelopment: NewMentalDevelopmentService(db.MentalDevelopment),
 	}
 }

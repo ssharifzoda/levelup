@@ -25,7 +25,7 @@ func (h *Handler) userIdentity(c *gin.Context) {
 	//parse token
 	userId, err := h.services.Authorization.ParseToken(headerParts[1])
 	if err != nil {
-		NewErrorResponse(c, 401, err.Error())
+		NewErrorResponse(c, 401, "invalid token, pls take again")
 		return
 	}
 	c.Set(userCtx, userId)

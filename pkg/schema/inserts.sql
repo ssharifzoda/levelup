@@ -20,3 +20,11 @@ values ('Reading'),
        ('Photogravure'),
        ('Singing'),
        ('Healthy eating');
+------------------------------------------------------------------------------------
+insert into mental_category(name)
+    values ( 'Confidence' ),
+           ('Close relations'),
+           ('Self-appraisal'),
+           ('Difficulty');
+
+

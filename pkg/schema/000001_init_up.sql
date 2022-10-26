@@ -35,8 +35,8 @@ create table equivalents(
 
 create table bad_habit(
     id bigserial primary key,
-    habit_category_id int unique references habits_category,
-    equivalent_id bigint not null references equivalents,
+    habit_category_id int references habits_category on delete cascade not null,
+    equivalent_id int references equivalents on delete cascade not null,
     created timestamptz not null default current_timestamp
 );
 create table bad_habits_list(
@@ -44,6 +44,51 @@ create table bad_habits_list(
     user_id int references users on delete cascade not null,
     bad_habit_id int references bad_habit on delete cascade not null
 );
+-------------------------------------------------------------------------------------------
+create table mental_category(
+    id bigserial primary key,
+    name varchar(50) not null
+);
+create table course(
+    id bigserial primary key,
+    mental_category_id int references mental_category on delete cascade not null,
+    created timestamptz not null default current_timestamp
+);
+create table mental_course_list(
+    id bigserial primary key,
+    user_id int references users on delete cascade not null,
+    course_id int references course on delete cascade not null
+);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 -- create table gender(
 --     id bigserial primary key,
 --     sex varchar(50) not null

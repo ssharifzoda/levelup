@@ -16,6 +16,9 @@ const (
 	equivalents           = "equivalents"
 	positiveValidCategory = "He did not have this bad habits"
 	negativeValidCategory = "You already have this bad habits"
+	courseTable           = "course"
+	mentalCategoryTable   = "mental_category"
+	mentalCourseList      = "mental_course_list"
 )
 
 type Config struct {
