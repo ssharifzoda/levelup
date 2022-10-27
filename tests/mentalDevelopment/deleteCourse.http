@@ -1,0 +1,2 @@
+### Delete course by id
+DELETE localhost:9999/api/mental/2

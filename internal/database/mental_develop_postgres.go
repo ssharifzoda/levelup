@@ -43,3 +43,11 @@ func (m *MentalDevelopPostgres) GetById(userId int, id int) (domain.CourseOutput
 	err := m.conn.QueryRow(query, userId, id).Scan(&item.Id, &item.MentalCategory, &item.Created)
 	return item, err
 }
+func (m *MentalDevelopPostgres) DeleteCourseById(userId, id int) (string, error) {
+	query := fmt.Sprintf("delete from %s c using %s mc where c.id = mc.course_id and mc.user_id = $1 and mc.course_id = $2", courseTable, mentalCourseList)
+	_, err := m.conn.Exec(query, userId, id)
+	if err != nil {
+		return "", err
+	}
+	return "Record delete operation completed successfully", nil
+}

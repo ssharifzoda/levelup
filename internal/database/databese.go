@@ -28,6 +28,7 @@ type BadHabit interface {
 type MentalDevelopment interface {
 	Create(userId int, input domain.CourseInput) (int, error)
 	GetById(userId int, id int) (domain.CourseOutput, error)
+	DeleteCourseById(userId, id int) (string, error)
 }
 
 type Database struct {

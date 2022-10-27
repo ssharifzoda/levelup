@@ -45,3 +45,6 @@ func (m *MentalDevelopmentService) GetById(userId int, id int) (domain.CourseOut
 	}
 	return item, nil
 }
+func (m *MentalDevelopmentService) DeleteCourseById(userId, id int) (string, error) {
+	return m.db.DeleteCourseById(userId, id)
+}

@@ -2,6 +2,7 @@ package handlers
 
 import (
 	"github.com/gin-gonic/gin"
+	"github.com/sirupsen/logrus"
 	domain "github.com/ssharifzoda/levelup/internal/types"
 	"os"
 	"strconv"
@@ -62,7 +63,10 @@ func (h *Handler) getAudio(c *gin.Context) {
 		NewErrorResponse(c, 500, err.Error())
 		return
 	}
-	c.Writer.Write(audio)
+	if _, err = c.Writer.Write(audio); err != nil {
+		logrus.Print(err)
+		return
+	}
 }
 
 func (h *Handler) getBook(c *gin.Context) {
@@ -84,9 +88,24 @@ func (h *Handler) getBook(c *gin.Context) {
 		NewErrorResponse(c, 500, err.Error())
 		return
 	}
-	c.Writer.Write(book)
+	if _, err = c.Writer.Write(book); err != nil {
+		logrus.Print(err)
+		return
+	}
 }
 
 func (h *Handler) deleteCourseByID(c *gin.Context) {
-
+	userId, err := getUserId(c)
+	if err != nil {
+		return
+	}
+	id, err := strconv.Atoi(c.Param("habit_id"))
+	if err != nil {
+		NewErrorResponse(c, 400, "invalid id param")
+	}
+	text, err := h.services.MentalDevelopment.DeleteCourseById(userId, id)
+	if err != nil {
+		NewErrorResponse(c, 500, err.Error())
+	}
+	c.JSON(200, text)
 }
