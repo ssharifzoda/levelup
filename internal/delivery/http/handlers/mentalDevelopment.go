@@ -52,6 +52,7 @@ func (h *Handler) getAudio(c *gin.Context) {
 	id, err := strconv.Atoi(c.Param("course_id"))
 	if err != nil {
 		NewErrorResponse(c, 400, "invalid id param")
+		return
 	}
 	item, err := h.services.MentalDevelopment.GetById(userId, id)
 	if err != nil {
@@ -77,6 +78,7 @@ func (h *Handler) getBook(c *gin.Context) {
 	id, err := strconv.Atoi(c.Param("course_id"))
 	if err != nil {
 		NewErrorResponse(c, 400, "invalid id param")
+		return
 	}
 	item, err := h.services.MentalDevelopment.GetById(userId, id)
 	if err != nil {
@@ -99,13 +101,15 @@ func (h *Handler) deleteCourseByID(c *gin.Context) {
 	if err != nil {
 		return
 	}
-	id, err := strconv.Atoi(c.Param("habit_id"))
+	id, err := strconv.Atoi(c.Param("course_id"))
 	if err != nil {
 		NewErrorResponse(c, 400, "invalid id param")
+		return
 	}
 	text, err := h.services.MentalDevelopment.DeleteCourseById(userId, id)
 	if err != nil {
 		NewErrorResponse(c, 500, err.Error())
+		return
 	}
 	c.JSON(200, text)
 }

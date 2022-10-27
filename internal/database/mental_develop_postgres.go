@@ -38,7 +38,7 @@ func (m *MentalDevelopPostgres) GetById(userId int, id int) (domain.CourseOutput
 	var item domain.CourseOutput
 	query := fmt.Sprintf("select c.id, mc.name, c.created from %s as c\n"+
 		"inner JOIN %s as ul on c.id = ul.course_id \n"+
-		"inner join %s as mc on c.mental_category_id = c.id\n"+
+		"inner join %s as mc on c.mental_category_id = mc.id\n"+
 		"where ul.user_id = $1 and c.id = $2", courseTable, mentalCourseList, mentalCategoryTable)
 	err := m.conn.QueryRow(query, userId, id).Scan(&item.Id, &item.MentalCategory, &item.Created)
 	return item, err

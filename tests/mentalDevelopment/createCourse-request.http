@@ -1,8 +1,8 @@
 ### Create course
 POST localhost:9999/api/mental
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjY3MTk0ODksImlhdCI6MTY2NjcxMzQ4OSwidXNlcl9pZCI6MX0.GV6xKQOjZhUAv_-sVoFfcpEO93AVgfwGqYMmqMW3hOc
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjY5MjM1MDcsImlhdCI6MTY2Njg2MzUwNywidXNlcl9pZCI6MX0.W4ydRur7Fd9PypFllWobMcCN8sPUdyyfJl7nsO8g5bo
 Content-Type: application/json
 
 {
-  "mental_category_id": 1
+  "mental_category_id": 2
 }

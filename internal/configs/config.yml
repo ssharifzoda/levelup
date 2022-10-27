@@ -7,11 +7,7 @@ db:
   DBName: "zozh"
 
 auth:
-  TokenTTL: 1000m
-  RefreshTokenTTL: 1200m
+  TokenTTL: 10000m
+  RefreshTokenTTL: 12000m
 
-storage:
-  Confidence: "D:\\storage\\Confidence\\"
-  Difficulty: "D:\\storage\\Difficulty\\"
-  CloseRelations: "D:\\storage\\Close relations\\"
-  SelfAppraisal: "D:\\storage\\Self-appraisal\\"
+storage: "D:\\storage\\"

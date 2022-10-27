@@ -8,10 +8,9 @@ import (
 )
 
 const (
-	audio    = "audio.ogg"
-	slesh    = "\\"
-	filmPath = "filmpath.txt"
-	book     = "book.epub"
+	audio    = "\\audio.ogg"
+	filmPath = "\\filmpath.txt"
+	book     = "\\book.epub"
 )
 
 type MentalDevelopmentService struct {
@@ -30,16 +29,16 @@ func (m *MentalDevelopmentService) GetById(userId int, id int) (domain.CourseOut
 	if err != nil {
 		return item, err
 	}
-	item.Audio = viper.GetString("storage.confidence") + audio
+	item.Audio = viper.GetString("storage") + item.MentalCategory + audio
 	if err != nil {
 		return item, err
 	}
-	path, err := os.ReadFile(viper.GetString("storage.confidence") + filmPath)
+	path, err := os.ReadFile(viper.GetString("storage") + item.MentalCategory + filmPath)
 	if err != nil {
 		return item, err
 	}
 	item.FilmPath = string(path)
-	item.Book = viper.GetString("storage.confidence") + book
+	item.Book = viper.GetString("storage") + item.MentalCategory + book
 	if err != nil {
 		return item, err
 	}
