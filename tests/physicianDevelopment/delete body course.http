@@ -1,0 +1,3 @@
+### delete body course by id
+DELETE localhost:9999/api/body/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc1NjQ2NTgsImlhdCI6MTY2Njk2NDY1OCwidXNlcl9pZCI6MX0.p7Mpr3IY4RX_qcePXJeAAEn5sofAkjjwseVP6gQnT24

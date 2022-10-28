@@ -44,3 +44,25 @@ func (p *PhysicianDevelopPostgres) GetById(userId int, id int) (domain.BodyCours
 	err := p.conn.QueryRow(query, userId, id).Scan(&item.Id, &item.Level, &item.TrainCategory, &item.Created)
 	return item, err
 }
+
+func (p *PhysicianDevelopPostgres) DeleteCourseById(userId int, id int) (string, error) {
+	query := fmt.Sprintf("delete from %s bc using %s bcl where bc.id = bcl.body_course_id and bcl.user_id = $1 and bcl.body_course_id = $2", bodyCourseTable, bodyCourselist)
+	_, err := p.conn.Exec(query, userId, id)
+	if err != nil {
+		return "", err
+	}
+	return "Record delete operation completed successfully", nil
+}
+
+func (p *PhysicianDevelopPostgres) GetCategory(trainCategoryId, userId int) (string, error) {
+	var valid Validate
+	query := fmt.Sprintf("select bc.train_category_id from %s as bc\n "+
+		"inner JOIN %s as bcl on bc.id = bcl.body_course_id \n"+
+		"inner JOIN %s as tc on bc.train_category_id = tc.id\n"+
+		"where bcl.user_id = $1;", bodyCourseTable, bodyCourselist, trainCategoryTable)
+	err := p.conn.QueryRow(query, userId).Scan(&valid.TrainCategoryId)
+	if valid.TrainCategoryId == trainCategoryId {
+		return negativeValidCategory, err
+	}
+	return positiveValidCategory, nil
+}

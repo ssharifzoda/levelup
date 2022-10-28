@@ -28,6 +28,7 @@ const (
 type Validate struct {
 	HabitCategoryId int `json:"habit_category_id"`
 	CourseCategory  int `json:"mental_category_id"`
+	TrainCategoryId int `json:"train_category_id"`
 }
 
 type Config struct {

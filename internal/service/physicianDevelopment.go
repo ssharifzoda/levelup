@@ -31,3 +31,9 @@ func (p *PhysicianDevelopService) GetById(userId int, id int) (domain.BodyCourse
 	item.Playlist = viper.GetString("storage.bodycourse") + item.Level + "\\" + playlist
 	return item, nil
 }
+func (p *PhysicianDevelopService) DeleteCourseById(userId int, id int) (string, error) {
+	return p.db.DeleteCourseById(userId, id)
+}
+func (p *PhysicianDevelopService) ValidateCategory(trainCategoryId, userId int) (string, error) {
+	return p.db.GetCategory(trainCategoryId, userId)
+}

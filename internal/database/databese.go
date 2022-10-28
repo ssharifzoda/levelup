@@ -35,6 +35,8 @@ type MentalDevelopment interface {
 type PhysicianDevelopment interface {
 	Create(userId int, input domain.BodyCourseInput) (int, error)
 	GetById(userId int, id int) (domain.BodyCourseOutput, error)
+	DeleteCourseById(userId, id int) (string, error)
+	GetCategory(trainCategoryId, userId int) (string, error)
 }
 
 type Database struct {
