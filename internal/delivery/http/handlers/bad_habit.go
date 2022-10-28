@@ -8,8 +8,8 @@ import (
 
 const (
 	massage               = "Your operation completed successfully"
-	positiveValidCategory = "He did not have this bad habits"
-	negativeValidCategory = "You already have this bad habits"
+	positiveValidCategory = "He did not have this"
+	negativeValidCategory = "You already have this"
 )
 
 type GetAllBadHabitsResponse struct {

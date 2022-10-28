@@ -10,4 +10,6 @@ auth:
   TokenTTL: 10000m
   RefreshTokenTTL: 12000m
 
-storage: "D:\\storage\\"
+storage:
+  MentalCourse: "D:\\storage\\Mental course\\"
+  BodyCourse: "D:\\storage\\Body course\\"

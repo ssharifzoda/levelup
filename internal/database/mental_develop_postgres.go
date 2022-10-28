@@ -51,3 +51,15 @@ func (m *MentalDevelopPostgres) DeleteCourseById(userId, id int) (string, error)
 	}
 	return "Record delete operation completed successfully", nil
 }
+func (m *MentalDevelopPostgres) GetCategory(categoryId, userId int) (string, error) {
+	var valid Validate
+	query := fmt.Sprintf("select c.mental_category_id from %s as c\n "+
+		"inner JOIN %s as mcl on c.id = mcl.course_id \n"+
+		"inner JOIN %s as mc on c.mental_category_id = mc.id\n"+
+		"where mcl.user_id = $1;", courseTable, mentalCourseList, mentalCategoryTable)
+	err := m.conn.QueryRow(query, userId).Scan(&valid.CourseCategory)
+	if valid.CourseCategory == categoryId {
+		return negativeValidCategory, err
+	}
+	return positiveValidCategory, nil
+}

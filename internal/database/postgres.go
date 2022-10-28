@@ -14,12 +14,21 @@ const (
 	badHabitList          = "bad_habits_list"
 	badHabitCategory      = "habits_category"
 	equivalents           = "equivalents"
-	positiveValidCategory = "He did not have this bad habits"
-	negativeValidCategory = "You already have this bad habits"
+	positiveValidCategory = "He did not have this"
+	negativeValidCategory = "You already have this"
 	courseTable           = "course"
 	mentalCategoryTable   = "mental_category"
 	mentalCourseList      = "mental_course_list"
+	bodyCourseTable       = "body_course"
+	bodyCourselist        = "body_course_list"
+	bodyLevelTable        = "level_category"
+	trainCategoryTable    = "train_category"
 )
+
+type Validate struct {
+	HabitCategoryId int `json:"habit_category_id"`
+	CourseCategory  int `json:"mental_category_id"`
+}
 
 type Config struct {
 	Host     string

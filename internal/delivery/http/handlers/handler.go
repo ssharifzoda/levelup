@@ -51,6 +51,20 @@ func (h *Handler) InitRoutes() *gin.Engine {
 			}
 			mentalDev.DELETE("/:course_id", h.deleteCourseByID)
 		}
+		bodyDev := api.Group("/body")
+		{
+			bodyDev.POST("/", h.createBodyCourse)
+			//bodyDev.GET("/", h.recommendation)
+			course := bodyDev.Group("/course")
+			{
+				course.GET("/:course_id", h.getBodyCourseByID)
+				course.GET("/:course_id/video", h.getVideoByCourse)
+				course.GET("/:course_id/playlist", h.getPlaylist)
+				course.GET("/:course_id/diet", h.diet)
+				course.GET("/:course_id/plan", h.trainPlan)
+			}
+			bodyDev.DELETE("/:course_id", h.deleteBodyCourse)
+		}
 	}
 	return router
 }

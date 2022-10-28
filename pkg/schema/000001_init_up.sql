@@ -5,6 +5,7 @@ Create table users (
     password_hash varchar(255) not null,
     created timestamptz not null default current_timestamp
 );
+----------------------------------------------------------------------------------------------------------------
 create table item(
     id     bigserial primary key,
     title varchar(255) not null,
@@ -17,12 +18,13 @@ create table items_list(
      user_id int references users on delete cascade not null,
      item_id int references item on delete cascade not null
 );
+----------------------------------------------------------------------------------------------------------------
 create table citations(
     id bigserial primary key,
     author varchar(255) not null,
     citation text not null
 );
-
+----------------------------------------------------------------------------------------------------------------
 create table habits_category(
   id bigserial primary key,
   name varchar(200) not null
@@ -59,9 +61,29 @@ create table mental_course_list(
     user_id int references users on delete cascade not null,
     course_id int references course on delete cascade not null
 );
+-----------------------------------------------------------------------------------------------------------
+create table level_category(
+    id bigserial primary key,
+    name varchar(50)not null
+);
 
+create table train_category(
+    id bigserial primary key,
+    name varchar(50)not null
+);
 
+create table body_course(
+    id bigserial primary key,
+    level_id int references level_category on delete cascade not null,
+    train_category_id int references train_category on DELETE cascade not null,
+    created timestamptz not null default current_timestamp
+);
 
+create table body_course_list(
+    id bigserial primary key,
+    user_id int references users on delete cascade not null,
+    body_course_id int references body_course on delete cascade not null
+);
 
 
 

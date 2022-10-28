@@ -7,8 +7,17 @@ drop table equivalents;
 drop table mental_course_list;
 drop table course;
 drop table mental_category;
+drop table body_course_list;
+drop table body_course;
+drop table level_category;
+drop table train_category;
 drop table users;
 drop table citations;
+
+
+
+
+
 
 
 

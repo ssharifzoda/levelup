@@ -14,10 +14,6 @@ func NewBadHabitPostgres(conn *pgx.Conn) *BadHabitPostgres {
 	return &BadHabitPostgres{conn: conn}
 }
 
-type ValidateCategory struct {
-	HabitCategoryId int `json:"habit_category_id"`
-}
-
 func (b *BadHabitPostgres) Create(userId int, input domain.BadHabitInput) (int, error) {
 	tx, err := b.conn.Begin()
 	if err != nil {
@@ -79,7 +75,7 @@ func (b *BadHabitPostgres) DeleteHabitById(userId, id int) (string, error) {
 	return "Record delete operation completed successfully", nil
 }
 func (b *BadHabitPostgres) GetCategory(categoryId, userId int) (string, error) {
-	var valid ValidateCategory
+	var valid Validate
 	query := fmt.Sprintf("select bd.habit_category_id from %s as bd\n "+
 		"inner JOIN %s as ul on bd.id = ul.bad_habit_id \n"+
 		"inner JOIN %s as hc on bd.habit_category_id = hc.id\n"+

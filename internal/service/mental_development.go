@@ -11,6 +11,10 @@ const (
 	audio    = "\\audio.ogg"
 	filmPath = "\\filmpath.txt"
 	book     = "\\book.epub"
+	video    = "\\video.mp4"
+	diet     = "\\diet.txt"
+	plan     = "\\plan.txt"
+	playlist = "playlist.rar"
 )
 
 type MentalDevelopmentService struct {
@@ -29,16 +33,16 @@ func (m *MentalDevelopmentService) GetById(userId int, id int) (domain.CourseOut
 	if err != nil {
 		return item, err
 	}
-	item.Audio = viper.GetString("storage") + item.MentalCategory + audio
+	item.Audio = viper.GetString("storage.mentalcourse") + item.MentalCategory + audio
 	if err != nil {
 		return item, err
 	}
-	path, err := os.ReadFile(viper.GetString("storage") + item.MentalCategory + filmPath)
+	path, err := os.ReadFile(viper.GetString("storage.mentalcourse") + item.MentalCategory + filmPath)
 	if err != nil {
 		return item, err
 	}
 	item.FilmPath = string(path)
-	item.Book = viper.GetString("storage") + item.MentalCategory + book
+	item.Book = viper.GetString("storage.mentalcourse") + item.MentalCategory + book
 	if err != nil {
 		return item, err
 	}
@@ -46,4 +50,7 @@ func (m *MentalDevelopmentService) GetById(userId int, id int) (domain.CourseOut
 }
 func (m *MentalDevelopmentService) DeleteCourseById(userId, id int) (string, error) {
 	return m.db.DeleteCourseById(userId, id)
+}
+func (m *MentalDevelopmentService) ValidateCategory(categoryId, userId int) (string, error) {
+	return m.db.GetCategory(categoryId, userId)
 }

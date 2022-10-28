@@ -1,0 +1,24 @@
+### get physicain course by id
+GET localhost:9999/api/body/course/1
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc1Mzc0NjgsImlhdCI6MTY2NjkzNzQ2OCwidXNlcl9pZCI6MX0.f9ED-lt3daQlxG7DRPOO0Cl2e12ozmpqlbZPbq3LHGs
+
+
+
+### get physicain video course by id
+GET localhost:9999/api/body/course/1/video
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc1Mzc0NjgsImlhdCI6MTY2NjkzNzQ2OCwidXNlcl9pZCI6MX0.f9ED-lt3daQlxG7DRPOO0Cl2e12ozmpqlbZPbq3LHGs
+
+
+### get physicain playlist course by id
+GET localhost:9999/api/body/course/1/playlist
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc1Mzc0NjgsImlhdCI6MTY2NjkzNzQ2OCwidXNlcl9pZCI6MX0.f9ED-lt3daQlxG7DRPOO0Cl2e12ozmpqlbZPbq3LHGs
+
+
+### get physicain diet course by id
+GET localhost:9999/api/body/course/1/diet
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc1Mzc0NjgsImlhdCI6MTY2NjkzNzQ2OCwidXNlcl9pZCI6MX0.f9ED-lt3daQlxG7DRPOO0Cl2e12ozmpqlbZPbq3LHGs
+
+
+### get train plan course by id
+GET localhost:9999/api/body/course/1/plan
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc1Mzc0NjgsImlhdCI6MTY2NjkzNzQ2OCwidXNlcl9pZCI6MX0.f9ED-lt3daQlxG7DRPOO0Cl2e12ozmpqlbZPbq3LHGs

@@ -30,6 +30,12 @@ type MentalDevelopment interface {
 	Create(userId int, input domain.CourseInput) (int, error)
 	GetById(userId int, id int) (domain.CourseOutput, error)
 	DeleteCourseById(userId, id int) (string, error)
+	ValidateCategory(categoryId, userId int) (string, error)
+}
+
+type PhysicianDevelopment interface {
+	Create(userId int, input domain.BodyCourseInput) (int, error)
+	GetById(userId int, id int) (domain.BodyCourseOutput, error)
 }
 
 type Service struct {
@@ -37,13 +43,15 @@ type Service struct {
 	Diary
 	BadHabit
 	MentalDevelopment
+	PhysicianDevelopment
 }
 
 func NewService(db *database.Database) *Service {
 	return &Service{
-		Authorization:     NewAuthService(db.Authorization),
-		Diary:             NewDiaryService(db.Diary),
-		BadHabit:          NewBadHabitService(db.BadHabit),
-		MentalDevelopment: NewMentalDevelopmentService(db.MentalDevelopment),
+		Authorization:        NewAuthService(db.Authorization),
+		Diary:                NewDiaryService(db.Diary),
+		BadHabit:             NewBadHabitService(db.BadHabit),
+		MentalDevelopment:    NewMentalDevelopmentService(db.MentalDevelopment),
+		PhysicianDevelopment: NewPhysicianDevelopService(db.PhysicianDevelopment),
 	}
 }

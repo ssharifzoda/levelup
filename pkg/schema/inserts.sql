@@ -27,4 +27,15 @@ insert into mental_category(name)
            ('Self-appraisal'),
            ('Difficulty');
 
+---------------------------------------------------------------------------------------------------------------
+insert into level_category(name)
+    values ('Junior'),
+           ('Middle'),
+           ('Senior');
 
+insert into train_category(name)
+    values ('Hands'),
+           ('Legs'),
+           ('Press'),
+           ('Breast'),
+           ('Back');
