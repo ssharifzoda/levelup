@@ -23,6 +23,8 @@ type BadHabit interface {
 	GetById(userId, id int) (domain.BadHabitOutput, error)
 	DeleteHabitById(userId, id int) (string, error)
 	GetCategory(categoryId, userId int) (string, error)
+	GetCategories() ([]domain.HabitsCategory, error)
+	GetEquivalents() ([]domain.Equivalents, error)
 }
 
 type MentalDevelopment interface {

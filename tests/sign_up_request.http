@@ -3,7 +3,7 @@ POST localhost:9999/auth/sign-up
 Content-Type: application/json
 
 {
-  "name": "sin",
+  "name": "s",
   "username": "fuck",
   "password": "qwerty"
 }

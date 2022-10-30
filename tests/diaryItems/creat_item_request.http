@@ -1,6 +1,6 @@
 ### Create item
 POST localhost:9999/api/item/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjY5MjM1MDcsImlhdCI6MTY2Njg2MzUwNywidXNlcl9pZCI6MX0.W4ydRur7Fd9PypFllWobMcCN8sPUdyyfJl7nsO8g5bo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3MzA0ODQsImlhdCI6MTY2NzEzMDQ4NCwidXNlcl9pZCI6MX0.IE-M2EYaM8eKqexvNjnNTQa6dJUcyVi0yf2UkJemdk4
 Content-Type: application/json
 
 {

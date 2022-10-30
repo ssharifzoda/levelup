@@ -25,7 +25,7 @@ func (d *DiaryItemPostgres) Create(userId int, item domain.Item) (int, error) {
 		tx.Rollback()
 		return 0, nil
 	}
-	createItemListQuery := fmt.Sprintf("insert into %s (user_id, item_id) values ($1, $2)", itemsListTable)
+	createItemListQuery := fmt.Sprintf("insert into %s (user_id, item_id) values ($1, $2)", usersSpace)
 	_, err = tx.Exec(createItemListQuery, userId, id)
 	if err != nil {
 		tx.Rollback()
@@ -35,7 +35,7 @@ func (d *DiaryItemPostgres) Create(userId int, item domain.Item) (int, error) {
 }
 func (d *DiaryItemPostgres) GetAll(userId int) ([]domain.Item, error) {
 	var items []domain.Item
-	query := fmt.Sprintf("select tl.id, tl.title, tl.description, tl.body, ul.id, ul.user_id, ul.item_id from %s tl inner join %s ul on tl.id = ul.item_id where ul.user_id = $1", itemTable, itemsListTable)
+	query := fmt.Sprintf("select tl.id, tl.title, tl.description, tl.body, ul.id, ul.user_id, ul.item_id from %s tl inner join %s ul on tl.id = ul.item_id where ul.user_id = $1", itemTable, usersSpace)
 	row, err := d.conn.Query(query, userId)
 	if err != nil {
 		return nil, err
@@ -55,12 +55,12 @@ func (d *DiaryItemPostgres) GetAll(userId int) ([]domain.Item, error) {
 func (d *DiaryItemPostgres) GetById(userId, itemId int) (domain.Item, error) {
 	var item domain.Item
 	var list domain.ItemList
-	query := fmt.Sprintf("select tl.id, tl.title, tl.description, tl.body, ul.id, ul.user_id, ul.item_id from %s tl inner join %s ul on tl.id = ul.item_id where ul.user_id = $1 and item_id = $2", itemTable, itemsListTable)
+	query := fmt.Sprintf("select tl.id, tl.title, tl.description, tl.body, ul.id, ul.user_id, ul.item_id from %s tl inner join %s ul on tl.id = ul.item_id where ul.user_id = $1 and item_id = $2", itemTable, usersSpace)
 	err := d.conn.QueryRow(query, userId, itemId).Scan(&item.Id, &item.Title, &item.Description, &item.Body, &list.Id, &list.UserId, &list.DiaryId)
 	return item, err
 }
 func (d *DiaryItemPostgres) DeleteItemById(userId, itemId int) (string, error) {
-	query := fmt.Sprintf("delete from %s tl using %s ul where tl.id = ul.item_id and ul.user_id = $1 and ul.item_id = $2", itemTable, itemsListTable)
+	query := fmt.Sprintf("delete from %s tl using %s ul where tl.id = ul.item_id and ul.user_id = $1 and ul.item_id = $2", itemTable, usersSpace)
 	_, err := d.conn.Exec(query, userId, itemId)
 	if err != nil {
 		return "", err

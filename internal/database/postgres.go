@@ -9,20 +9,13 @@ import (
 const (
 	usersTable            = "users"
 	itemTable             = "item"
-	itemsListTable        = "items_list"
 	badHabitTable         = "bad_habit"
-	badHabitList          = "bad_habits_list"
-	badHabitCategory      = "habits_category"
-	equivalents           = "equivalents"
 	positiveValidCategory = "He did not have this"
 	negativeValidCategory = "You already have this"
-	courseTable           = "course"
-	mentalCategoryTable   = "mental_category"
-	mentalCourseList      = "mental_course_list"
+	mentalCourseTable     = "mental_course"
 	bodyCourseTable       = "body_course"
-	bodyCourselist        = "body_course_list"
-	bodyLevelTable        = "level_category"
-	trainCategoryTable    = "train_category"
+	usersSpace            = "users_space"
+	categories            = "categories"
 )
 
 type Validate struct {

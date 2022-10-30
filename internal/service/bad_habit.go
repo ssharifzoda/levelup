@@ -28,3 +28,9 @@ func (b *BadHabitService) DeleteHabitById(userId, id int) (string, error) {
 func (b *BadHabitService) ValidateCategory(categoryId, userId int) (string, error) {
 	return b.db.GetCategory(categoryId, userId)
 }
+func (b *BadHabitService) GetCategories() ([]domain.HabitsCategory, error) {
+	return b.db.GetCategories()
+}
+func (b *BadHabitService) GetEquivalents() ([]domain.Equivalents, error) {
+	return b.db.GetEquivalents()
+}

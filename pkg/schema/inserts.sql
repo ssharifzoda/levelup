@@ -1,4 +1,4 @@
-insert into habits_category(name)
+insert into categories(name)
 values ('Smoking'),
        ('Porno dependence'),
        ('Hazard'),
@@ -6,11 +6,8 @@ values ('Smoking'),
        ('Gluttony'),
        ('Bite nails'),
        ('Gossip'),
-       ('Attention dependence');
-
-
-insert into equivalents(name)
-values ('Reading'),
+       ('Attention dependence'),
+       ('Reading'),
        ('Diary introduction'),
        ('Music'),
        ('Play guitar'),
@@ -19,23 +16,16 @@ values ('Reading'),
        ('Train'),
        ('Photogravure'),
        ('Singing'),
-       ('Healthy eating');
-------------------------------------------------------------------------------------
-insert into mental_category(name)
-    values ( 'Confidence' ),
-           ('Close relations'),
-           ('Self-appraisal'),
-           ('Difficulty');
-
----------------------------------------------------------------------------------------------------------------
-insert into level_category(name)
-    values ('Junior'),
-           ('Middle'),
-           ('Senior');
-
-insert into train_category(name)
-    values ('Hands'),
-           ('Legs'),
-           ('Press'),
-           ('Breast'),
-           ('Back');
+       ('Healthy eating'),
+       ( 'Confidence' ),
+       ('Close relations'),
+       ('Self-appraisal'),
+       ('Difficulty'),
+       ('Junior'),
+       ('Middle'),
+       ('Senior'),
+       ('Hands'),
+       ('Legs'),
+       ('Press'),
+       ('Breast'),
+       ('Back');

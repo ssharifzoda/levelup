@@ -1,9 +1,9 @@
 ### Create bad habit
 POST localhost:9999/api/bad-habit/
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjY5MjM1MDcsImlhdCI6MTY2Njg2MzUwNywidXNlcl9pZCI6MX0.W4ydRur7Fd9PypFllWobMcCN8sPUdyyfJl7nsO8g5bo
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3MzMzMzAsImlhdCI6MTY2NzEzMzMzMCwidXNlcl9pZCI6MX0.xRtrnkXkNTCGJL6UM65iM6Pd6CtXCa-Sz4mRElPUhOI
 Content-Type: application/json
 
 {
-  "habit_category_id":4,
-  "equivalent_id": 3
+  "habit_category_id":1,
+  "equivalent_id": 9
 }

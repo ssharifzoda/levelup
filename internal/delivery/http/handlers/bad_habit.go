@@ -85,6 +85,21 @@ func (h *Handler) deleteHabit(c *gin.Context) {
 	}
 	c.JSON(200, text)
 }
-func (h *Handler) editEquivalentByID(c *gin.Context) {
 
+//func (h *Handler) editEquivalentByID(c *gin.Context) {
+//
+//}
+func (h *Handler) getCategories(c *gin.Context) {
+	categories, err := h.services.BadHabit.GetCategories()
+	if err != nil {
+		NewErrorResponse(c, 500, "internal error")
+	}
+	c.JSON(200, categories)
+}
+func (h *Handler) getEquivalents(c *gin.Context) {
+	equivalents, err := h.services.BadHabit.GetEquivalents()
+	if err != nil {
+		NewErrorResponse(c, 500, "internal error")
+	}
+	c.JSON(200, equivalents)
 }

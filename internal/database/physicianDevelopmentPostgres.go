@@ -26,7 +26,7 @@ func (p *PhysicianDevelopPostgres) Create(userId int, input domain.BodyCourseInp
 		tx.Rollback()
 		return 0, nil
 	}
-	createItemListQuery := fmt.Sprintf("insert into %s (user_id, body_course_id) values ($1, $2)", bodyCourselist)
+	createItemListQuery := fmt.Sprintf("insert into %s (user_id, body_course_id) values ($1, $2)", usersSpace)
 	_, err = tx.Exec(createItemListQuery, userId, id)
 	if err != nil {
 		tx.Rollback()
@@ -40,13 +40,13 @@ func (p *PhysicianDevelopPostgres) GetById(userId int, id int) (domain.BodyCours
 		"inner JOIN %s as bcl on bc.id = bcl.body_course_id \n"+
 		"inner join %s as lc on bc.level_id = lc.id\n"+
 		"inner join %s as tc on bc.train_category_id = tc.id\n"+
-		"where bcl.user_id = $1 and bc.id = $2;", bodyCourseTable, bodyCourselist, bodyLevelTable, trainCategoryTable)
+		"where bcl.user_id = $1 and bc.id = $2;", bodyCourseTable, usersSpace, categories, categories)
 	err := p.conn.QueryRow(query, userId, id).Scan(&item.Id, &item.Level, &item.TrainCategory, &item.Created)
 	return item, err
 }
 
 func (p *PhysicianDevelopPostgres) DeleteCourseById(userId int, id int) (string, error) {
-	query := fmt.Sprintf("delete from %s bc using %s bcl where bc.id = bcl.body_course_id and bcl.user_id = $1 and bcl.body_course_id = $2", bodyCourseTable, bodyCourselist)
+	query := fmt.Sprintf("delete from %s bc using %s bcl where bc.id = bcl.body_course_id and bcl.user_id = $1 and bcl.body_course_id = $2", bodyCourseTable, usersSpace)
 	_, err := p.conn.Exec(query, userId, id)
 	if err != nil {
 		return "", err
@@ -59,7 +59,7 @@ func (p *PhysicianDevelopPostgres) GetCategory(trainCategoryId, userId int) (str
 	query := fmt.Sprintf("select bc.train_category_id from %s as bc\n "+
 		"inner JOIN %s as bcl on bc.id = bcl.body_course_id \n"+
 		"inner JOIN %s as tc on bc.train_category_id = tc.id\n"+
-		"where bcl.user_id = $1;", bodyCourseTable, bodyCourselist, trainCategoryTable)
+		"where bcl.user_id = $1;", bodyCourseTable, usersSpace, categories)
 	err := p.conn.QueryRow(query, userId).Scan(&valid.TrainCategoryId)
 	if valid.TrainCategoryId == trainCategoryId {
 		return negativeValidCategory, err
