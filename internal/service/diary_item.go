@@ -15,8 +15,9 @@ func NewDiaryService(db database.Diary) *DiaryService {
 func (d *DiaryService) Create(userId int, item domain.Item) (int, error) {
 	return d.db.Create(userId, item)
 }
-func (d *DiaryService) GetAll(userId int) ([]domain.Item, error) {
-	return d.db.GetAll(userId)
+func (d *DiaryService) GetAll(userId, pageNo, itemLimit int) ([]domain.Item, error) {
+	offset := (pageNo * itemLimit) - itemLimit
+	return d.db.GetAll(userId, offset, itemLimit)
 }
 func (d *DiaryService) GetById(userId, itemId int) (domain.Item, error) {
 	return d.db.GetById(userId, itemId)

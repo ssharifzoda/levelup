@@ -86,10 +86,10 @@ func (b *BadHabitPostgres) GetCategory(categoryId, userId int) (string, error) {
 	}
 	return positiveValidCategory, nil
 }
-func (b *BadHabitPostgres) GetCategories() ([]domain.HabitsCategory, error) {
+func (b *BadHabitPostgres) GetCategories(offset, itemLimit int) ([]domain.HabitsCategory, error) {
 	var categories []domain.HabitsCategory
-	query := fmt.Sprintf("select c.id, c.name from categories as c where c.id between 1 and 8")
-	row, err := b.conn.Query(query)
+	query := fmt.Sprintf("select c.id, c.name from categories as c where c.id between 1 and 8 limit $1 offset $2")
+	row, err := b.conn.Query(query, itemLimit, offset)
 	if err != nil {
 		return nil, err
 	}
@@ -104,10 +104,10 @@ func (b *BadHabitPostgres) GetCategories() ([]domain.HabitsCategory, error) {
 	}
 	return categories, err
 }
-func (b *BadHabitPostgres) GetEquivalents() ([]domain.Equivalents, error) {
+func (b *BadHabitPostgres) GetEquivalents(offset, itemLimit int) ([]domain.Equivalents, error) {
 	var equivalents []domain.Equivalents
-	query := fmt.Sprintf("select c.id, c.name from categories as c where c.id between 9 and 18")
-	row, err := b.conn.Query(query)
+	query := fmt.Sprintf("select c.id, c.name from categories as c where c.id between 9 and 18 limit $1 offset $2")
+	row, err := b.conn.Query(query, itemLimit, offset)
 	if err != nil {
 		return nil, err
 	}

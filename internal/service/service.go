@@ -14,7 +14,7 @@ type Authorization interface {
 }
 type Diary interface {
 	Create(userId int, item domain.Item) (int, error)
-	GetAll(userId int) ([]domain.Item, error)
+	GetAll(userId, pageNo, itemLimit int) ([]domain.Item, error)
 	GetById(userId, itemId int) (domain.Item, error)
 	DeleteItemById(userId, itemId int) (string, error)
 	GetItemByTitle(userId int, title string) (domain.Item, error)
@@ -25,8 +25,8 @@ type BadHabit interface {
 	GetById(userId, id int) (domain.BadHabitOutput, error)
 	DeleteHabitById(userId, id int) (string, error)
 	ValidateCategory(categoryId, userId int) (string, error)
-	GetCategories() ([]domain.HabitsCategory, error)
-	GetEquivalents() ([]domain.Equivalents, error)
+	GetCategories(pageNo, itemLimit int) ([]domain.HabitsCategory, error)
+	GetEquivalents(pageNo, itemLimit int) ([]domain.Equivalents, error)
 }
 
 type MentalDevelopment interface {

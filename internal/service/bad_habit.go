@@ -28,9 +28,11 @@ func (b *BadHabitService) DeleteHabitById(userId, id int) (string, error) {
 func (b *BadHabitService) ValidateCategory(categoryId, userId int) (string, error) {
 	return b.db.GetCategory(categoryId, userId)
 }
-func (b *BadHabitService) GetCategories() ([]domain.HabitsCategory, error) {
-	return b.db.GetCategories()
+func (b *BadHabitService) GetCategories(pageNo, itemLimit int) ([]domain.HabitsCategory, error) {
+	offset := (pageNo * itemLimit) - itemLimit
+	return b.db.GetCategories(offset, itemLimit)
 }
-func (b *BadHabitService) GetEquivalents() ([]domain.Equivalents, error) {
-	return b.db.GetEquivalents()
+func (b *BadHabitService) GetEquivalents(pageNo, itemLimit int) ([]domain.Equivalents, error) {
+	offset := (pageNo * itemLimit) - itemLimit
+	return b.db.GetEquivalents(offset, itemLimit)
 }

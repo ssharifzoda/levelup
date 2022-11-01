@@ -1,4 +1,4 @@
 ### Get all items
-GET localhost:9999/api/item/
+GET localhost:9999/api/item/?page=2&limit=2
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3MzA0ODQsImlhdCI6MTY2NzEzMDQ4NCwidXNlcl9pZCI6MX0.IE-M2EYaM8eKqexvNjnNTQa6dJUcyVi0yf2UkJemdk4
 

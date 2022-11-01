@@ -90,14 +90,30 @@ func (h *Handler) deleteHabit(c *gin.Context) {
 //
 //}
 func (h *Handler) getCategories(c *gin.Context) {
-	categories, err := h.services.BadHabit.GetCategories()
+	pageNo, err := strconv.Atoi(c.Query("page"))
+	if err != nil {
+		NewErrorResponse(c, 401, "invalid page params")
+	}
+	itemLimit, err := strconv.Atoi(c.Query("limit"))
+	if err != nil {
+		NewErrorResponse(c, 401, "invalid page params")
+	}
+	categories, err := h.services.BadHabit.GetCategories(pageNo, itemLimit)
 	if err != nil {
 		NewErrorResponse(c, 500, "internal error")
 	}
 	c.JSON(200, categories)
 }
 func (h *Handler) getEquivalents(c *gin.Context) {
-	equivalents, err := h.services.BadHabit.GetEquivalents()
+	pageNo, err := strconv.Atoi(c.Query("page"))
+	if err != nil {
+		NewErrorResponse(c, 401, "invalid page params")
+	}
+	itemLimit, err := strconv.Atoi(c.Query("limit"))
+	if err != nil {
+		NewErrorResponse(c, 401, "invalid page params")
+	}
+	equivalents, err := h.services.BadHabit.GetEquivalents(pageNo, itemLimit)
 	if err != nil {
 		NewErrorResponse(c, 500, "internal error")
 	}

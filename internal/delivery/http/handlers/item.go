@@ -35,7 +35,15 @@ func (h *Handler) getAllItem(c *gin.Context) {
 	if err != nil {
 		return
 	}
-	items, err := h.services.Diary.GetAll(userId)
+	pageNo, err := strconv.Atoi(c.Query("page"))
+	if err != nil {
+		NewErrorResponse(c, 401, "invalid page params")
+	}
+	itemLimit, err := strconv.Atoi(c.Query("limit"))
+	if err != nil {
+		NewErrorResponse(c, 401, "invalid page params")
+	}
+	items, err := h.services.Diary.GetAll(userId, pageNo, itemLimit)
 	if err != nil {
 		NewErrorResponse(c, 500, err.Error())
 	}

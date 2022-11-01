@@ -35,18 +35,18 @@ func (d *DiaryItemPostgres) Create(userId int, item domain.Item) (int, error) {
 	}
 	return id, tx.Commit()
 }
-func (d *DiaryItemPostgres) GetAll(userId int) ([]domain.Item, error) {
+func (d *DiaryItemPostgres) GetAll(userId, offset, itemLimit int) ([]domain.Item, error) {
 	var items []domain.Item
-	query := fmt.Sprintf("select it.id, it.title, it.description, it.body, us.id, us.user_id, us.item_id from %s it inner join %s us on it.id = us.item_id where us.user_id = $1", itemTable, usersSpace)
-	row, err := d.conn.Query(query, userId)
+	query := fmt.Sprintf("select it.id, it.title, it.description, it.body from %s it\n"+
+		"inner join %s us on it.id = us.item_id where us.user_id = $1 limit $2 offset $3", itemTable, usersSpace)
+	row, err := d.conn.Query(query, userId, itemLimit, offset)
 	if err != nil {
 		return nil, err
 	}
 	defer row.Close()
 	for row.Next() {
 		var item domain.Item
-		var list domain.UsersSpace
-		err = row.Scan(&item.Id, &item.Title, &item.Description, &item.Body, &list.UserId, &list.DiaryId)
+		err = row.Scan(&item.Id, &item.Title, &item.Description, &item.Body)
 		if err != nil {
 			return nil, err
 		}
