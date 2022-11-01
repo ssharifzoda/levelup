@@ -18,3 +18,11 @@ type BodyCourseOutput struct {
 	Diet          string    `json:"Diet"`
 	Created       time.Time `json:"created" db:"created"`
 }
+type BodyCourseCategories struct {
+	Id   int    `json:"id"`
+	Name string `json:"name"`
+}
+type BodyLevelCourse struct {
+	Id   int    `json:"id"`
+	Name string `json:"name"`
+}

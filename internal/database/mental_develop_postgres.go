@@ -26,7 +26,7 @@ func (m *MentalDevelopPostgres) Create(userId int, input domain.CourseInput) (in
 		tx.Rollback()
 		return 0, nil
 	}
-	createItemListQuery := fmt.Sprintf("insert into %s (user_id, course_id) values ($1, $2)", usersSpace)
+	createItemListQuery := fmt.Sprintf("insert into %s (user_id, mental_course_id) values ($1, $2)", usersSpace)
 	_, err = tx.Exec(createItemListQuery, userId, id)
 	if err != nil {
 		tx.Rollback()
@@ -36,10 +36,10 @@ func (m *MentalDevelopPostgres) Create(userId int, input domain.CourseInput) (in
 }
 func (m *MentalDevelopPostgres) GetById(userId int, id int) (domain.CourseOutput, error) {
 	var item domain.CourseOutput
-	query := fmt.Sprintf("select c.id, mc.name, c.created from %s as c\n"+
-		"inner JOIN %s as ul on c.id = ul.course_id \n"+
-		"inner join %s as mc on c.mental_category_id = mc.id\n"+
-		"where ul.user_id = $1 and c.id = $2", mentalCourseTable, usersSpace, categories)
+	query := fmt.Sprintf("select mc.id, c.name, mc.created from %s as mc\n"+
+		"inner JOIN %s as us on mc.id = us.mental_course_id \n"+
+		"inner join %s as c on mc.mental_category_id = c.id\n"+
+		"where us.user_id = $1 and mc.id = $2", mentalCourseTable, usersSpace, categories)
 	err := m.conn.QueryRow(query, userId, id).Scan(&item.Id, &item.MentalCategory, &item.Created)
 	return item, err
 }
@@ -62,4 +62,22 @@ func (m *MentalDevelopPostgres) GetCategory(categoryId, userId int) (string, err
 		return negativeValidCategory, err
 	}
 	return positiveValidCategory, nil
+}
+func (m *MentalDevelopPostgres) GetCategories() ([]domain.MentalCourseCategory, error) {
+	var categories []domain.MentalCourseCategory
+	query := fmt.Sprintf("select c.id, c.name from categories as c where c.id between 19 and 22")
+	row, err := m.conn.Query(query)
+	if err != nil {
+		return nil, err
+	}
+	defer row.Close()
+	for row.Next() {
+		var category domain.MentalCourseCategory
+		err := row.Scan(&category.Id, &category.Name)
+		if err != nil {
+			return nil, err
+		}
+		categories = append(categories, category)
+	}
+	return categories, err
 }

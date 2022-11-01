@@ -1,20 +1,20 @@
 ### get physicain course by id
-GET localhost:9999/api/body/course/3
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc1NjQ2NTgsImlhdCI6MTY2Njk2NDY1OCwidXNlcl9pZCI6MX0.p7Mpr3IY4RX_qcePXJeAAEn5sofAkjjwseVP6gQnT24
+GET localhost:9999/api/body/course/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3MzA0ODQsImlhdCI6MTY2NzEzMDQ4NCwidXNlcl9pZCI6MX0.IE-M2EYaM8eKqexvNjnNTQa6dJUcyVi0yf2UkJemdk4
 
 
 ### get physicain video course by id
-GET localhost:9999/api/body/course/3/video
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc1NjQ2NTgsImlhdCI6MTY2Njk2NDY1OCwidXNlcl9pZCI6MX0.p7Mpr3IY4RX_qcePXJeAAEn5sofAkjjwseVP6gQnT24
+GET localhost:9999/api/body/course/2/video
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3MzA0ODQsImlhdCI6MTY2NzEzMDQ4NCwidXNlcl9pZCI6MX0.IE-M2EYaM8eKqexvNjnNTQa6dJUcyVi0yf2UkJemdk4
 
 ### get physicain playlist course by id
-GET localhost:9999/api/body/course/3/playlist
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc1NjQ2NTgsImlhdCI6MTY2Njk2NDY1OCwidXNlcl9pZCI6MX0.p7Mpr3IY4RX_qcePXJeAAEn5sofAkjjwseVP6gQnT24
+GET localhost:9999/api/body/course/2/playlist
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3MzA0ODQsImlhdCI6MTY2NzEzMDQ4NCwidXNlcl9pZCI6MX0.IE-M2EYaM8eKqexvNjnNTQa6dJUcyVi0yf2UkJemdk4
 
 ### get physicain diet course by id
-GET localhost:9999/api/body/course/3/diet
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc1NjQ2NTgsImlhdCI6MTY2Njk2NDY1OCwidXNlcl9pZCI6MX0.p7Mpr3IY4RX_qcePXJeAAEn5sofAkjjwseVP6gQnT24
+GET localhost:9999/api/body/course/2/diet
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3MzA0ODQsImlhdCI6MTY2NzEzMDQ4NCwidXNlcl9pZCI6MX0.IE-M2EYaM8eKqexvNjnNTQa6dJUcyVi0yf2UkJemdk4
 
 ### get train plan course by id
-GET localhost:9999/api/body/course/1/plan
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc1Mzc0NjgsImlhdCI6MTY2NjkzNzQ2OCwidXNlcl9pZCI6MX0.f9ED-lt3daQlxG7DRPOO0Cl2e12ozmpqlbZPbq3LHGs
+GET localhost:9999/api/body/course/2/plan
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3MzA0ODQsImlhdCI6MTY2NzEzMDQ4NCwidXNlcl9pZCI6MX0.IE-M2EYaM8eKqexvNjnNTQa6dJUcyVi0yf2UkJemdk4

@@ -29,7 +29,7 @@ func (h *Handler) InitRoutes() *gin.Engine {
 			items.GET("/", h.getAllItem)
 			items.GET("/:item_id", h.getItemByID)
 			items.DELETE(":item_id", h.deleteItem)
-			//items.GET("/:title", h.getItemByTitle)
+			items.GET("/title", h.getItemByTitle)
 		}
 		badHabits := api.Group("bad-habit")
 		{
@@ -45,6 +45,7 @@ func (h *Handler) InitRoutes() *gin.Engine {
 		{
 			//mentalDev.GET("/", h.myInfo)
 			mentalDev.POST("/", h.createCourse)
+			mentalDev.GET("/categories", h.GetMentalCategories)
 			course := mentalDev.Group("/course")
 			{
 				course.GET("/:course_id", h.getCourseByID)
@@ -56,6 +57,8 @@ func (h *Handler) InitRoutes() *gin.Engine {
 		bodyDev := api.Group("/body")
 		{
 			bodyDev.POST("/", h.createBodyCourse)
+			bodyDev.GET("/categories", h.getPhysicianCourseCategories)
+			bodyDev.GET("/levels", h.getLevels)
 			//bodyDev.GET("/", h.recommendation)
 			course := bodyDev.Group("/course")
 			{

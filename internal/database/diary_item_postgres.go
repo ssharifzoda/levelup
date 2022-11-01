@@ -4,14 +4,16 @@ import (
 	"fmt"
 	"github.com/jackc/pgx"
 	"github.com/ssharifzoda/levelup/internal/types"
+	"gorm.io/gorm"
 )
 
 type DiaryItemPostgres struct {
-	conn *pgx.Conn
+	conn    *pgx.Conn
+	session *gorm.DB
 }
 
-func NewDiaryItemPostgres(conn *pgx.Conn) *DiaryItemPostgres {
-	return &DiaryItemPostgres{conn: conn}
+func NewDiaryItemPostgres(conn *pgx.Conn, session *gorm.DB) *DiaryItemPostgres {
+	return &DiaryItemPostgres{conn: conn, session: session}
 }
 func (d *DiaryItemPostgres) Create(userId int, item domain.Item) (int, error) {
 	tx, err := d.conn.Begin()
@@ -35,7 +37,7 @@ func (d *DiaryItemPostgres) Create(userId int, item domain.Item) (int, error) {
 }
 func (d *DiaryItemPostgres) GetAll(userId int) ([]domain.Item, error) {
 	var items []domain.Item
-	query := fmt.Sprintf("select tl.id, tl.title, tl.description, tl.body, ul.id, ul.user_id, ul.item_id from %s tl inner join %s ul on tl.id = ul.item_id where ul.user_id = $1", itemTable, usersSpace)
+	query := fmt.Sprintf("select it.id, it.title, it.description, it.body, us.id, us.user_id, us.item_id from %s it inner join %s us on it.id = us.item_id where us.user_id = $1", itemTable, usersSpace)
 	row, err := d.conn.Query(query, userId)
 	if err != nil {
 		return nil, err
@@ -43,8 +45,8 @@ func (d *DiaryItemPostgres) GetAll(userId int) ([]domain.Item, error) {
 	defer row.Close()
 	for row.Next() {
 		var item domain.Item
-		var list domain.ItemList
-		err = row.Scan(&item.Id, &item.Title, &item.Description, &item.Body, &list.Id, &list.UserId, &list.DiaryId)
+		var list domain.UsersSpace
+		err = row.Scan(&item.Id, &item.Title, &item.Description, &item.Body, &list.UserId, &list.DiaryId)
 		if err != nil {
 			return nil, err
 		}
@@ -54,9 +56,9 @@ func (d *DiaryItemPostgres) GetAll(userId int) ([]domain.Item, error) {
 }
 func (d *DiaryItemPostgres) GetById(userId, itemId int) (domain.Item, error) {
 	var item domain.Item
-	var list domain.ItemList
-	query := fmt.Sprintf("select tl.id, tl.title, tl.description, tl.body, ul.id, ul.user_id, ul.item_id from %s tl inner join %s ul on tl.id = ul.item_id where ul.user_id = $1 and item_id = $2", itemTable, usersSpace)
-	err := d.conn.QueryRow(query, userId, itemId).Scan(&item.Id, &item.Title, &item.Description, &item.Body, &list.Id, &list.UserId, &list.DiaryId)
+	var list domain.UsersSpace
+	query := fmt.Sprintf("select it.id, it.title, it.description, it.body, us.id, us.user_id, us.item_id from %s it inner join %s us on it.id = us.item_id where us.user_id = $1 and item_id = $2", itemTable, usersSpace)
+	err := d.conn.QueryRow(query, userId, itemId).Scan(&item.Id, &item.Title, &item.Description, &item.Body, &list.UserId, &list.DiaryId)
 	return item, err
 }
 func (d *DiaryItemPostgres) DeleteItemById(userId, itemId int) (string, error) {
@@ -66,4 +68,12 @@ func (d *DiaryItemPostgres) DeleteItemById(userId, itemId int) (string, error) {
 		return "", err
 	}
 	return "Record delete operation completed successfully", nil
+}
+func (d *DiaryItemPostgres) GetItemByTitle(userId int, title string) (domain.Item, error) {
+	var item domain.Item
+	err := d.session.Table("item").Select("item.id,title, description, body, created").Joins("join users_space us on user_id = ?", userId).Where("item.title = ?", title).Find(&item)
+	if err.Error != nil {
+		return item, err.Error
+	}
+	return item, nil
 }

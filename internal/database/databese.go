@@ -3,6 +3,7 @@ package database
 import (
 	"github.com/jackc/pgx"
 	"github.com/ssharifzoda/levelup/internal/types"
+	"gorm.io/gorm"
 )
 
 type Authorization interface {
@@ -15,6 +16,7 @@ type Diary interface {
 	GetAll(userId int) ([]domain.Item, error)
 	GetById(userId, itemId int) (domain.Item, error)
 	DeleteItemById(userId, itemId int) (string, error)
+	GetItemByTitle(userId int, title string) (domain.Item, error)
 }
 
 type BadHabit interface {
@@ -32,6 +34,7 @@ type MentalDevelopment interface {
 	GetById(userId int, id int) (domain.CourseOutput, error)
 	DeleteCourseById(userId, id int) (string, error)
 	GetCategory(categoryId, userId int) (string, error)
+	GetCategories() ([]domain.MentalCourseCategory, error)
 }
 
 type PhysicianDevelopment interface {
@@ -39,6 +42,8 @@ type PhysicianDevelopment interface {
 	GetById(userId int, id int) (domain.BodyCourseOutput, error)
 	DeleteCourseById(userId, id int) (string, error)
 	GetCategory(trainCategoryId, userId int) (string, error)
+	GetCategories() ([]domain.BodyCourseCategories, error)
+	GetLevels() ([]domain.BodyLevelCourse, error)
 }
 
 type Database struct {
@@ -49,10 +54,10 @@ type Database struct {
 	PhysicianDevelopment
 }
 
-func NewDatabase(conn *pgx.Conn) *Database {
+func NewDatabase(conn *pgx.Conn, session *gorm.DB) *Database {
 	return &Database{
 		Authorization:        NewAuthPostgres(conn),
-		Diary:                NewDiaryItemPostgres(conn),
+		Diary:                NewDiaryItemPostgres(conn, session),
 		BadHabit:             NewBadHabitPostgres(conn),
 		MentalDevelopment:    NewMentalDevelopPostgres(conn),
 		PhysicianDevelopment: NewPhysicianDevelopPostgres(conn),

@@ -3,7 +3,9 @@ Create table users (
     name varchar(255) not null,
     username varchar(255) not null unique,
     password_hash varchar(255) not null,
-    created timestamptz not null default current_timestamp
+    created_at timestamptz not null default current_timestamp,
+    updated_at timestamptz not null default current_timestamp,
+    deleted_at timestamptz default current_timestamp
 );
 ----------------------------------------------------------------------------------------------------------------
 create table item(

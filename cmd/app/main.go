@@ -30,7 +30,11 @@ func main() {
 	if err != nil {
 		logrus.Fatalf("failed to initializing db: %s", err.Error())
 	}
-	repository := database.NewDatabase(conn)
+	session, err := database.NewPostgresGorm()
+	if err != nil {
+		logrus.Fatalf("failed to initializing db: %s", err.Error())
+	}
+	repository := database.NewDatabase(conn, session)
 	services := service.NewService(repository)
 	handlers := handlers2.NewHandler(services)
 	srv := new(server.Server)

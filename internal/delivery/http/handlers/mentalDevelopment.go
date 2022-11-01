@@ -119,3 +119,10 @@ func (h *Handler) deleteCourseByID(c *gin.Context) {
 	}
 	c.JSON(200, text)
 }
+func (h *Handler) GetMentalCategories(c *gin.Context) {
+	categories, err := h.services.MentalDevelopment.GetCategories()
+	if err != nil {
+		NewErrorResponse(c, 500, "internal error")
+	}
+	c.JSON(200, categories)
+}

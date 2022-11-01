@@ -25,3 +25,6 @@ func (d *DiaryService) GetById(userId, itemId int) (domain.Item, error) {
 func (d *DiaryService) DeleteItemById(userId, itemId int) (string, error) {
 	return d.db.DeleteItemById(userId, itemId)
 }
+func (d *DiaryService) GetItemByTitle(userId int, title string) (domain.Item, error) {
+	return d.db.GetItemByTitle(userId, title)
+}

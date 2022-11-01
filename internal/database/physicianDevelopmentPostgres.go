@@ -66,3 +66,39 @@ func (p *PhysicianDevelopPostgres) GetCategory(trainCategoryId, userId int) (str
 	}
 	return positiveValidCategory, nil
 }
+func (p *PhysicianDevelopPostgres) GetCategories() ([]domain.BodyCourseCategories, error) {
+	var categories []domain.BodyCourseCategories
+	query := fmt.Sprintf("select c.id, c.name from categories as c where c.id between 26 and 30")
+	row, err := p.conn.Query(query)
+	if err != nil {
+		return nil, err
+	}
+	defer row.Close()
+	for row.Next() {
+		var category domain.BodyCourseCategories
+		err := row.Scan(&category.Id, &category.Name)
+		if err != nil {
+			return nil, err
+		}
+		categories = append(categories, category)
+	}
+	return categories, err
+}
+func (p *PhysicianDevelopPostgres) GetLevels() ([]domain.BodyLevelCourse, error) {
+	var levels []domain.BodyLevelCourse
+	query := fmt.Sprintf("select c.id, c.name from categories as c where c.id between 23 and 25")
+	row, err := p.conn.Query(query)
+	if err != nil {
+		return nil, err
+	}
+	defer row.Close()
+	for row.Next() {
+		var level domain.BodyLevelCourse
+		err := row.Scan(&level.Id, &level.Name)
+		if err != nil {
+			return nil, err
+		}
+		levels = append(levels, level)
+	}
+	return levels, err
+}

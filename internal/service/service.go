@@ -17,6 +17,7 @@ type Diary interface {
 	GetAll(userId int) ([]domain.Item, error)
 	GetById(userId, itemId int) (domain.Item, error)
 	DeleteItemById(userId, itemId int) (string, error)
+	GetItemByTitle(userId int, title string) (domain.Item, error)
 }
 type BadHabit interface {
 	Create(userId int, input domain.BadHabitInput) (int, error)
@@ -33,6 +34,7 @@ type MentalDevelopment interface {
 	GetById(userId int, id int) (domain.CourseOutput, error)
 	DeleteCourseById(userId, id int) (string, error)
 	ValidateCategory(categoryId, userId int) (string, error)
+	GetCategories() ([]domain.MentalCourseCategory, error)
 }
 
 type PhysicianDevelopment interface {
@@ -40,6 +42,8 @@ type PhysicianDevelopment interface {
 	GetById(userId int, id int) (domain.BodyCourseOutput, error)
 	DeleteCourseById(userId int, id int) (string, error)
 	ValidateCategory(trainCategoryId, userId int) (string, error)
+	GetCategories() ([]domain.BodyCourseCategories, error)
+	GetLevels() ([]domain.BodyLevelCourse, error)
 }
 
 type Service struct {

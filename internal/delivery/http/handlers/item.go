@@ -73,3 +73,15 @@ func (h *Handler) deleteItem(c *gin.Context) {
 	}
 	c.JSON(200, text)
 }
+func (h *Handler) getItemByTitle(c *gin.Context) {
+	userId, err := getUserId(c)
+	if err != nil {
+		return
+	}
+	title := c.Query("title")
+	item, err := h.services.Diary.GetItemByTitle(userId, title)
+	if err != nil {
+		NewErrorResponse(c, 500, err.Error())
+	}
+	c.JSON(200, item)
+}

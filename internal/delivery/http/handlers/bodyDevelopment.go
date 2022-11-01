@@ -160,3 +160,17 @@ func (h *Handler) deleteBodyCourse(c *gin.Context) {
 	}
 	c.JSON(200, text)
 }
+func (h *Handler) getPhysicianCourseCategories(c *gin.Context) {
+	categories, err := h.services.PhysicianDevelopment.GetCategories()
+	if err != nil {
+		NewErrorResponse(c, 500, "internal error")
+	}
+	c.JSON(200, categories)
+}
+func (h *Handler) getLevels(c *gin.Context) {
+	levels, err := h.services.PhysicianDevelopment.GetLevels()
+	if err != nil {
+		NewErrorResponse(c, 500, "internal error")
+	}
+	c.JSON(200, levels)
+}

@@ -1,14 +1,14 @@
 ### get mental course by id
-GET localhost:9999/api/mental/course/5
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjY5MjM1MDcsImlhdCI6MTY2Njg2MzUwNywidXNlcl9pZCI6MX0.W4ydRur7Fd9PypFllWobMcCN8sPUdyyfJl7nsO8g5bo
+GET localhost:9999/api/mental/course/2
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3MzA0ODQsImlhdCI6MTY2NzEzMDQ4NCwidXNlcl9pZCI6MX0.IE-M2EYaM8eKqexvNjnNTQa6dJUcyVi0yf2UkJemdk4
 
 
 ### get audio-book of course
-GET localhost:9999/api/mental/course/1/audio
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjY5MjM1MDcsImlhdCI6MTY2Njg2MzUwNywidXNlcl9pZCI6MX0.W4ydRur7Fd9PypFllWobMcCN8sPUdyyfJl7nsO8g5bo
+GET localhost:9999/api/mental/course/2/audio
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3MzA0ODQsImlhdCI6MTY2NzEzMDQ4NCwidXNlcl9pZCI6MX0.IE-M2EYaM8eKqexvNjnNTQa6dJUcyVi0yf2UkJemdk4
 
 
 
 ### get book of course
-GET localhost:9999/api/mental/course/1/book
-Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjY5MjM1MDcsImlhdCI6MTY2Njg2MzUwNywidXNlcl9pZCI6MX0.W4ydRur7Fd9PypFllWobMcCN8sPUdyyfJl7nsO8g5bo
+GET localhost:9999/api/mental/course/2/book
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3MzA0ODQsImlhdCI6MTY2NzEzMDQ4NCwidXNlcl9pZCI6MX0.IE-M2EYaM8eKqexvNjnNTQa6dJUcyVi0yf2UkJemdk4

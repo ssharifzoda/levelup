@@ -17,3 +17,7 @@ type CourseOutput struct {
 	Book           string    `json:"book-path"`
 	Created        time.Time `json:"created" db:"created"`
 }
+type MentalCourseCategory struct {
+	Id   int    `json:"id"`
+	Name string `json:"name"`
+}

@@ -1,8 +1,3 @@
-### Create course
-POST localhost:9999/api/mental
+### get phisician categories
+GET localhost:9999/api/body/categories
 Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3MzA0ODQsImlhdCI6MTY2NzEzMDQ4NCwidXNlcl9pZCI6MX0.IE-M2EYaM8eKqexvNjnNTQa6dJUcyVi0yf2UkJemdk4
-Content-Type: application/json
-
-{
-  "mental_category_id": 19
-}

@@ -37,3 +37,9 @@ func (p *PhysicianDevelopService) DeleteCourseById(userId int, id int) (string, 
 func (p *PhysicianDevelopService) ValidateCategory(trainCategoryId, userId int) (string, error) {
 	return p.db.GetCategory(trainCategoryId, userId)
 }
+func (p *PhysicianDevelopService) GetCategories() ([]domain.BodyCourseCategories, error) {
+	return p.db.GetCategories()
+}
+func (p *PhysicianDevelopService) GetLevels() ([]domain.BodyLevelCourse, error) {
+	return p.db.GetLevels()
+}

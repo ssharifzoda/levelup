@@ -54,3 +54,6 @@ func (m *MentalDevelopmentService) DeleteCourseById(userId, id int) (string, err
 func (m *MentalDevelopmentService) ValidateCategory(categoryId, userId int) (string, error) {
 	return m.db.GetCategory(categoryId, userId)
 }
+func (m *MentalDevelopmentService) GetCategories() ([]domain.MentalCourseCategory, error) {
+	return m.db.GetCategories()
+}
