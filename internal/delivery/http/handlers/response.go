@@ -2,7 +2,7 @@ package handlers
 
 import (
 	"github.com/gin-gonic/gin"
-	"github.com/sirupsen/logrus"
+	"github.com/ssharifzoda/levelup/pkg/logging"
 )
 
 type Error struct {
@@ -10,6 +10,7 @@ type Error struct {
 }
 
 func NewErrorResponse(c *gin.Context, statusCode int, massage string) {
-	logrus.Error(massage)
+	logger := logging.GetLogger()
+	logger.Error(massage)
 	c.AbortWithStatusJSON(statusCode, Error{massage})
 }
