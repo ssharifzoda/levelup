@@ -38,7 +38,7 @@ func (h *Handler) InitRoutes() *gin.Engine {
 			badHabits.POST("/", h.createHabit)
 			badHabits.GET("/", h.getAllHabits)
 			badHabits.GET("/:habit_id", h.getHabitByID)
-			//badHabits.PATCH("/:habit_id", h.editEquivalentByID)
+			badHabits.PATCH("/:habit_id", h.editEquivalentByID)
 			badHabits.DELETE("/:habit_id", h.deleteHabit)
 		}
 		mentalDev := api.Group("/mental")

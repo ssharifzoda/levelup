@@ -36,3 +36,6 @@ func (b *BadHabitService) GetEquivalents(pageNo, itemLimit int) ([]domain.Equiva
 	offset := (pageNo * itemLimit) - itemLimit
 	return b.db.GetEquivalents(offset, itemLimit)
 }
+func (b *BadHabitService) EditEquivalentByID(userId, id, equivalent int) error {
+	return b.db.EditEquivalentByID(userId, id, equivalent)
+}

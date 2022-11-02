@@ -119,3 +119,25 @@ func (h *Handler) getEquivalents(c *gin.Context) {
 	}
 	c.JSON(200, equivalents)
 }
+func (h *Handler) editEquivalentByID(c *gin.Context) {
+	userId, err := getUserId(c)
+	if err != nil {
+		return
+	}
+	id, err := strconv.Atoi(c.Param("habit_id"))
+	if err != nil {
+		NewErrorResponse(c, 400, "invalid id param")
+	}
+	equivalent, err := strconv.Atoi(c.Query("equivalent"))
+	if err != nil {
+		NewErrorResponse(c, 500, "internal error")
+	}
+	err = h.services.BadHabit.EditEquivalentByID(userId, id, equivalent)
+	if err != nil {
+		if err != nil {
+			NewErrorResponse(c, 500, "internal error")
+			return
+		}
+	}
+	c.JSON(200, massage)
+}

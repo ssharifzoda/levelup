@@ -27,6 +27,7 @@ type BadHabit interface {
 	GetCategory(categoryId, userId int) (string, error)
 	GetCategories(offset, itemLimit int) ([]domain.HabitsCategory, error)
 	GetEquivalents(offset, itemLimit int) ([]domain.Equivalents, error)
+	EditEquivalentByID(userId, id, equivalent int) error
 }
 
 type MentalDevelopment interface {
@@ -58,7 +59,7 @@ func NewDatabase(conn *pgx.Conn, session *gorm.DB) *Database {
 	return &Database{
 		Authorization:        NewAuthPostgres(conn),
 		Diary:                NewDiaryItemPostgres(conn, session),
-		BadHabit:             NewBadHabitPostgres(conn),
+		BadHabit:             NewBadHabitPostgres(conn, session),
 		MentalDevelopment:    NewMentalDevelopPostgres(conn),
 		PhysicianDevelopment: NewPhysicianDevelopPostgres(conn),
 	}

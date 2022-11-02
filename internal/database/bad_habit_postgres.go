@@ -4,14 +4,16 @@ import (
 	"fmt"
 	"github.com/jackc/pgx"
 	domain "github.com/ssharifzoda/levelup/internal/types"
+	"gorm.io/gorm"
 )
 
 type BadHabitPostgres struct {
-	conn *pgx.Conn
+	conn    *pgx.Conn
+	session *gorm.DB
 }
 
-func NewBadHabitPostgres(conn *pgx.Conn) *BadHabitPostgres {
-	return &BadHabitPostgres{conn: conn}
+func NewBadHabitPostgres(conn *pgx.Conn, session *gorm.DB) *BadHabitPostgres {
+	return &BadHabitPostgres{conn: conn, session: session}
 }
 
 func (b *BadHabitPostgres) Create(userId int, input domain.BadHabitInput) (int, error) {
@@ -121,4 +123,12 @@ func (b *BadHabitPostgres) GetEquivalents(offset, itemLimit int) ([]domain.Equiv
 		equivalents = append(equivalents, equivalent)
 	}
 	return equivalents, err
+}
+
+func (b *BadHabitPostgres) EditEquivalentByID(userId, id, equivalent int) error {
+	err := b.session.Table("bad_habit as bd").Joins("join users_space us on user_id = ? and us.bad_habit_id = ?", userId, id).Where("id = ?", id).Update("equivalent_id", equivalent)
+	if err.Error != nil {
+		return err.Error
+	}
+	return nil
 }

@@ -27,6 +27,7 @@ type BadHabit interface {
 	ValidateCategory(categoryId, userId int) (string, error)
 	GetCategories(pageNo, itemLimit int) ([]domain.HabitsCategory, error)
 	GetEquivalents(pageNo, itemLimit int) ([]domain.Equivalents, error)
+	EditEquivalentByID(userId, id, equivalent int) error
 }
 
 type MentalDevelopment interface {
