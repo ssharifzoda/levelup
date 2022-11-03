@@ -13,3 +13,4 @@ auth:
 storage:
   MentalCourse: "D:\\storage\\Mental course\\"
   BodyCourse: "D:\\storage\\Body course\\"
+  Public: "D:\\storage\\Public\\"

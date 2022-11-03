@@ -13,9 +13,10 @@ type BadHabitsList struct {
 	UserId     int `json:"user_id" db:"user_id" binding:"required"`
 	BadHabitId int `json:"bad_habit_id" db:"bad_habit_id" binding:"required"`
 }
-type DoExercise struct {
-	Session     int    `json:"session" binding:"required"`
-	LastSession string `json:"last_session"`
+type Exercise struct {
+	BadHabitId int       `json:"bad_habit_id"`
+	Registrar  int       `json:"registrar"`
+	LastAt     time.Time `json:"last_at"`
 }
 type HabitsCategory struct {
 	Id   int    `json:"id"`
