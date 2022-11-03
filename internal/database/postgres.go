@@ -22,6 +22,7 @@ const (
 	bodyCourseTable       = "body_course"
 	usersSpace            = "users_space"
 	categories            = "categories"
+	public                = "public"
 )
 
 type Validate struct {

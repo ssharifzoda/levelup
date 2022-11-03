@@ -1,5 +1,5 @@
 insert into categories(name)
-values ('Smoking'),
+values ('Smoking'),                     --bad habits categories
        ('Porno dependence'),
        ('Hazard'),
        ('Internet dependence'),
@@ -7,7 +7,7 @@ values ('Smoking'),
        ('Bite nails'),
        ('Gossip'),
        ('Attention dependence'),
-       ('Reading'),
+       ('Reading'),                 ---Equivalents
        ('Diary introduction'),
        ('Music'),
        ('Play guitar'),
@@ -17,15 +17,33 @@ values ('Smoking'),
        ('Photogravure'),
        ('Singing'),
        ('Healthy eating'),
-       ( 'Confidence' ),
+       ( 'Confidence' ),                --mental category
        ('Close relations'),
        ('Self-appraisal'),
        ('Difficulty'),
-       ('Junior'),
+       ('Junior'),              --Levels
        ('Middle'),
        ('Senior'),
-       ('Hands'),
+       ('Hands'),           --Body train category
        ('Legs'),
        ('Press'),
        ('Breast'),
-       ('Back');
+       ('Back'),
+       ('Perfect'),             --spirits
+       ('Good'),
+       ('Not bad'),
+       ('Bad'),
+       ('Awful'),
+       ('Man'),                 --gender
+       ('Woman'),
+       ('Married'),                 --family_status
+       ('Unmarried'),
+       ('Sangunique'),                      --temperaments
+       ('Choleric'),
+       ('Phlegmatic'),
+       ('Melancholic');
+
+---------------------------------------------------------------------------------------------------------------------------
+
+insert into citations(author, citation)
+values ('Суман', 'Никто не придёт и не вытащит тебя из г**на. Выбирайся сам');

@@ -23,6 +23,8 @@ func (h *Handler) InitRoutes() *gin.Engine {
 	}
 	api := router.Group("/api", h.userIdentity)
 	{
+		api.GET("/public", h.getPublic)
+		api.POST("/public", h.receivePublic)
 		items := api.Group("/item")
 		{
 			items.POST("/", h.creatItem)

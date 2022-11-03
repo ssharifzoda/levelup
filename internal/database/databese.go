@@ -47,12 +47,17 @@ type PhysicianDevelopment interface {
 	GetLevels() ([]domain.BodyLevelCourse, error)
 }
 
+type Public interface {
+	ReceivePublic(userId int, input domain.Public) error
+}
+
 type Database struct {
 	Authorization
 	Diary
 	BadHabit
 	MentalDevelopment
 	PhysicianDevelopment
+	Public
 }
 
 func NewDatabase(conn *pgx.Conn, session *gorm.DB) *Database {
@@ -62,5 +67,6 @@ func NewDatabase(conn *pgx.Conn, session *gorm.DB) *Database {
 		BadHabit:             NewBadHabitPostgres(conn, session),
 		MentalDevelopment:    NewMentalDevelopPostgres(conn),
 		PhysicianDevelopment: NewPhysicianDevelopPostgres(conn),
+		Public:               NewPublicPostgres(conn, session),
 	}
 }

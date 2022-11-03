@@ -47,12 +47,17 @@ type PhysicianDevelopment interface {
 	GetLevels() ([]domain.BodyLevelCourse, error)
 }
 
+type Public interface {
+	ReceivePublic(userId int, input domain.Public) error
+}
+
 type Service struct {
 	Authorization
 	Diary
 	BadHabit
 	MentalDevelopment
 	PhysicianDevelopment
+	Public
 }
 
 func NewService(db *database.Database) *Service {
@@ -62,5 +67,6 @@ func NewService(db *database.Database) *Service {
 		BadHabit:             NewBadHabitService(db.BadHabit),
 		MentalDevelopment:    NewMentalDevelopmentService(db.MentalDevelopment),
 		PhysicianDevelopment: NewPhysicianDevelopService(db.PhysicianDevelopment),
+		Public:               NewPublicService(db),
 	}
 }

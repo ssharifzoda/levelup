@@ -15,3 +15,61 @@
 {"file":"postgres.go: 69","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
 {"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"internal error"}
 {"file":"postgres.go: 69","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"postgres.go: 69","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"empty auth header"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"incorrect request"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"incorrect request"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"incorrect request"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"incorrect request"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"incorrect request"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"incorrect request"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"incorrect request"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"incorrect request"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"incorrect request"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"incorrect request"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"incorrect request"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"incorrect request"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"incorrect request"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"incorrect request"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"incorrect request"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"incorrect request"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"incorrect request"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"incorrect request"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"incorrect request"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"incorrect request"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"incorrect request"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"incorrect request"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"incorrect request"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"incorrect request"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"internal error"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"internal error"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"internal error"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
+{"file":"response.go: 14","func":"github.com/ssharifzoda/levelup/internal/delivery/http/handlers.NewErrorResponse()","level":"error","msg":"internal error"}
+{"file":"postgres.go: 70","func":"github.com/ssharifzoda/levelup/internal/database.NewPostgresGorm()","level":"info","msg":"Postgres Connection success:  localhost"}
