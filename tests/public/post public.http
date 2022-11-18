@@ -4,7 +4,7 @@ Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2M
 Content-Type: application/json
 
 {
-  "age": 26,
+  "age": 25,
   "gender_id": 36,
   "family_status_id": 39,
   "goal_to_life": "to do impossible",

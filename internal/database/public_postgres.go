@@ -28,11 +28,25 @@ func (p *PublicPostgres) ReceivePublic(userId int, input domain.Public) error {
 		tx.Rollback()
 		return err
 	}
-	query := fmt.Sprintf("update %s set public_id = ? where id = %d", usersTable, userId)
+	query := fmt.Sprintf("update %s set public_id = ? where user_id = %d", usersSpace, userId)
 	row = tx.Exec(query, id)
 	if row.Error != nil {
 		tx.Rollback()
 		return row.Error
 	}
 	return tx.Commit().Error
+}
+
+func (p *PublicPostgres) DoTest(userId, temperamentId int) (string, error) {
+	query := fmt.Sprintf("update %s set temperament_id = ? where user_id = %d", usersSpace, userId)
+	row := p.session.Exec(query, temperamentId)
+	if row.Error != nil {
+		return row.Error.Error(), row.Error
+	}
+	var temperament string
+	err := p.session.Table("categories").Select("name").Where("id = ?", temperamentId).Row().Scan(&temperament)
+	if err != nil {
+		return "", err
+	}
+	return temperament, nil
 }

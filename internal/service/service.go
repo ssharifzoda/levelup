@@ -49,6 +49,7 @@ type PhysicianDevelopment interface {
 
 type Public interface {
 	ReceivePublic(userId int, input domain.Public) error
+	DoTest(userId int, input domain.Test) (string, error)
 }
 
 type Service struct {

@@ -1,0 +1,711 @@
+POST http://localhost:9999/api/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjkzNjYyMjQsImlhdCI6MTY2ODc2NjIyNCwidXNlcl9pZCI6MX0.fPW6bJLEP1CPHSlXhD0Ky8-j6bTPetx5d4Ae3VlNYBA
+Content-Type: application/json
+
+{
+  "first": 1,
+  "second": 1,
+  "three": 1,
+  "fourth": 0,
+  "five": 1,
+  "sixth": 1,
+  "seventh": 1,
+  "eighth": 1,
+  "ninth": 1,
+  "tenth": 1,
+  "eleventh":0,
+  "twelfth":0,
+  "thirteenth": 0,
+  "fourteenth":0,
+  "fifteenth": 0,
+  "sixteenth": 0,
+  "seventeenth": 0,
+  "eighteenth": 1,
+  "nineteenth": 1,
+  "twentieth": 0
+}
+
+<> 2022-11-18T131356.200.json
+
+###
+
+GET http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjkzNjYyMjQsImlhdCI6MTY2ODc2NjIyNCwidXNlcl9pZCI6MX0.fPW6bJLEP1CPHSlXhD0Ky8-j6bTPetx5d4Ae3VlNYBA
+
+<> 2022-11-18T131217.200.txt
+
+###
+
+GET http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3MzMzMzAsImlhdCI6MTY2NzEzMzMzMCwidXNlcl9pZCI6MX0.xRtrnkXkNTCGJL6UM65iM6Pd6CtXCa-Sz4mRElPUhOI
+
+<> 2022-11-18T131202.401.json
+
+###
+
+GET http://localhost:9999/api/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjkzNjYyMjQsImlhdCI6MTY2ODc2NjIyNCwidXNlcl9pZCI6MX0.fPW6bJLEP1CPHSlXhD0Ky8-j6bTPetx5d4Ae3VlNYBA
+
+<> 2022-11-18T131115.200.txt
+
+###
+
+GET http://localhost:9999/api/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjkzNjYyMjQsImlhdCI6MTY2ODc2NjIyNCwidXNlcl9pZCI6MX0.fPW6bJLEP1CPHSlXhD0Ky8-j6bTPetx5d4Ae3VlNYBA"
+
+<> 2022-11-18T131052.401.json
+
+###
+
+POST http://localhost:9999/auth/sign-in
+Content-Type: application/json
+
+{
+  "username": "fuck",
+  "password": "qwerty"
+}
+
+<> 2022-11-18T131024.200.json
+
+###
+
+GET http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2Njc3MzMzMzAsImlhdCI6MTY2NzEzMzMzMCwidXNlcl9pZCI6MX0.xRtrnkXkNTCGJL6UM65iM6Pd6CtXCa-Sz4mRElPUhOI
+
+<> 2022-11-18T131013.401.json
+
+###
+
+POST http://localhost:9999/api/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwOTM5MzQsImlhdCI6MTY2NzQ5MzkzNCwidXNlcl9pZCI6MX0.NYz30UbBVgF1dR6YyNdHjTeHO3WA1mr5jaDRHGxJ8EA
+Content-Type: application/json
+
+{
+  "first": 1,
+  "second": 1,
+  "three": 1,
+  "fourth": 0,
+  "five": 1,
+  "sixth": 1,
+  "seventh": 1,
+  "eighth": 1,
+  "ninth": 1,
+  "tenth": 1,
+  "eleventh":0,
+  "twelfth":0,
+  "thirteenth": 0,
+  "fourteenth":0,
+  "fifteenth": 0,
+  "sixteenth": 0,
+  "seventeenth": 0,
+  "eighteenth": 1,
+  "nineteenth": 1,
+  "twentieth": 0
+}
+
+<> 2022-11-03T194859.200.json
+
+###
+
+POST http://localhost:9999/api/bad-habit/
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwOTM5MzQsImlhdCI6MTY2NzQ5MzkzNCwidXNlcl9pZCI6MX0.NYz30UbBVgF1dR6YyNdHjTeHO3WA1mr5jaDRHGxJ8EA
+Content-Type: application/json
+
+{
+  "habit_category_id":1,
+  "equivalent_id": 9
+}
+
+<> 2022-11-03T194851.200.json
+
+###
+
+POST http://localhost:9999/api/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwOTM5MzQsImlhdCI6MTY2NzQ5MzkzNCwidXNlcl9pZCI6MX0.NYz30UbBVgF1dR6YyNdHjTeHO3WA1mr5jaDRHGxJ8EA
+Content-Type: application/json
+
+{
+  "first": 1,
+  "second": 1,
+  "three": 1,
+  "fourth": 0,
+  "five": 1,
+  "sixth": 1,
+  "seventh": 1,
+  "eighth": 1,
+  "ninth": 1,
+  "tenth": 1,
+  "eleventh":0,
+  "twelfth":0,
+  "thirteenth": 0,
+  "fourteenth":0,
+  "fifteenth": 0,
+  "sixteenth": 0,
+  "seventeenth": 0,
+  "eighteenth": 1,
+  "nineteenth": 1,
+  "twentieth": 0
+}
+
+<> 2022-11-03T194612.200.json
+
+###
+
+POST http://localhost:9999/auth/sign-in
+Content-Type: application/json
+
+{
+  "username": "fuck",
+  "password": "qwerty"
+}
+
+<> 2022-11-03T194534.200.json
+
+###
+
+POST http://localhost:9999/auth/sign-up
+Content-Type: application/json
+
+{
+  "name": "s",
+  "username": "fuck",
+  "password": "qwerty"
+}
+
+<> 2022-11-03T194528.200.json
+
+###
+
+POST http://localhost:9999/api/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "first": 1,
+  "second": 1,
+  "three": 1,
+  "fourth": 0,
+  "five": 1,
+  "sixth": 1,
+  "seventh": 1,
+  "eighth": 1,
+  "ninth": 1,
+  "tenth": 1,
+  "eleventh":0,
+  "twelfth":0,
+  "thirteenth": 0,
+  "fourteenth":0,
+  "fifteenth": 0,
+  "sixteenth": 0,
+  "seventeenth": 0,
+  "eighteenth": 1,
+  "nineteenth": 1,
+  "twentieth": 0
+}
+
+<> 2022-11-03T194325.500.json
+
+###
+
+POST http://localhost:9999
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "first": 1,
+  "second": 1,
+  "three": 1,
+  "fourth": 0,
+  "five": 1,
+  "sixth": 1,
+  "seventh": 1,
+  "eighth": 1,
+  "ninth": 1,
+  "tenth": 1,
+  "eleventh":0,
+  "twelfth":0,
+  "thirteenth": 0,
+  "fourteenth":0,
+  "fifteenth": 0,
+  "sixteenth": 0,
+  "seventeenth": 0,
+  "eighteenth": 1,
+  "nineteenth": 1,
+  "twentieth": 0
+}
+
+<> 2022-11-03T194313.404.txt
+
+###
+
+GET http://localhost:9999/api/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+
+<> 2022-11-03T194300.200.txt
+
+###
+
+GET http://localhost:9999/api/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+
+<> 2022-11-03T170837.200.txt
+
+###
+
+GET http://localhost:9999/api/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+
+<> 2022-11-03T170417.200.txt
+
+###
+
+GET http://localhost:9999/api/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+
+<> 2022-11-03T170336.200.txt
+
+###
+
+GET http://localhost:9999/api/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+
+<> 2022-11-03T162533.200.txt
+
+###
+
+GET http://localhost:9999/api/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+
+<> 2022-11-03T161917.200.txt
+
+###
+
+GET http://localhost:9999/api/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+
+<> 2022-11-03T161440.200.txt
+
+###
+
+GET http://localhost:9999/api/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+
+<> 2022-11-03T161346.200.txt
+
+###
+
+GET http://localhost:9999/api/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+
+<> 2022-11-03T161201.200.txt
+
+###
+
+GET http://localhost:9999/api/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+
+<> 2022-11-03T161035.500.json
+
+###
+
+GET http://localhost:9999/api/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+
+<> 2022-11-03T160813.200.txt
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 25,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+<> 2022-11-03T150231.200.json
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 25,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+<> 2022-11-03T150123.500.json
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 25,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+<> 2022-11-03T145952.500.json
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 26,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+<> 2022-11-03T144307.200.json
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 26,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+<> 2022-11-03T144203.500.json
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 26,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+<> 2022-11-03T144022.500.json
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 26,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+<> 2022-11-03T143900.500.json
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 26,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+<> 2022-11-03T143745.500.json
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 26,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+<> 2022-11-03T141718.400.json
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 26,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 26,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 26,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 26,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+<> 2022-11-03T141045.400.json
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 26,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+<> 2022-11-03T140631.400.json
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 26,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+<> 2022-11-03T140551.400.json
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 26,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+<> 2022-11-03T135946.400.json
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 26,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+<> 2022-11-03T135757.400.json
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 26,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+<> 2022-11-03T135641.400.json
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 26,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+<> 2022-11-03T135403.400.json
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 26,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+<> 2022-11-03T135332.400.json
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 26,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+<> 2022-11-03T135307.400.json
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 26,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+<> 2022-11-03T135129.400.json
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 26,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+<> 2022-11-03T134923.400.json
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 26,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+<> 2022-11-03T134638.400.json
+
+###
+
+POST http://localhost:9999/api/public
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjgwNzE2MzcsImlhdCI6MTY2NzQ3MTYzNywidXNlcl9pZCI6MX0.XeCKqvXDP92oRVeK5d_jrhKSoKGjMZ9gVZudlDeBCOw
+Content-Type: application/json
+
+{
+  "age": 26,
+  "gender_id": 36,
+  "family_status_id": 39,
+  "goal_to_life": "to do impossible",
+  "big_fear": "be lesser"
+}
+
+<> 2022-11-03T134515.400.json
+
+###
+

@@ -25,6 +25,8 @@ func (h *Handler) InitRoutes() *gin.Engine {
 	{
 		api.GET("/public", h.getPublic)
 		api.POST("/public", h.receivePublic)
+		api.GET("/test", h.getTest)
+		api.POST("/test", h.doTest)
 		items := api.Group("/item")
 		{
 			items.POST("/", h.creatItem)
