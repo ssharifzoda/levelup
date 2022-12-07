@@ -8,6 +8,7 @@ import (
 	"github.com/ssharifzoda/levelup/pkg/logging"
 	"gorm.io/driver/postgres"
 	"gorm.io/gorm"
+	"gorm.io/gorm/logger"
 	"os"
 	"time"
 )
@@ -58,16 +59,18 @@ func NewPostgresGorm() (*gorm.DB, error) {
 	Username := viper.GetString("db.username")
 	Password := os.Getenv("DB_PASSWORD")
 	DBName := viper.GetString("db.dbname")
-	logger := logging.GetLogger()
+	log := logging.GetLogger()
 	connString := fmt.Sprintf("host=%s user=%s password=%v dbname=%s port=%d sslmode=disable TimeZone=Asia/Dushanbe",
 		Host, Username, Password, DBName, Port)
-	conn, err := gorm.Open(postgres.Open(connString))
+	conn, err := gorm.Open(postgres.Open(connString), &gorm.Config{
+		Logger: logger.Default.LogMode(logger.Silent),
+	})
 	if err != nil {
-		logger.Printf("%s GetPostgresConnection -> Open error: ", err.Error())
+		log.Printf("%s GetPostgresConnection -> Open error: ", err.Error())
 		return nil, err
 	}
 
-	logger.Println("Postgres Connection success: ", Host)
+	log.Println("Postgres Connection success: ", Host)
 
 	return conn, nil
 }

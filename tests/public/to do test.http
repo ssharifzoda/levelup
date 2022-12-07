@@ -1,0 +1,27 @@
+### to do test
+POST localhost:9999/api/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjkzNjYyMjQsImlhdCI6MTY2ODc2NjIyNCwidXNlcl9pZCI6MX0.fPW6bJLEP1CPHSlXhD0Ky8-j6bTPetx5d4Ae3VlNYBA
+Content-Type: application/json
+
+{
+  "first": 1,
+  "second": 1,
+  "three": 1,
+  "fourth": 0,
+  "five": 1,
+  "sixth": 1,
+  "seventh": 1,
+  "eighth": 1,
+  "ninth": 1,
+  "tenth": 1,
+  "eleventh":0,
+  "twelfth":0,
+  "thirteenth": 0,
+  "fourteenth":0,
+  "fifteenth": 0,
+  "sixteenth": 0,
+  "seventeenth": 0,
+  "eighteenth": 1,
+  "nineteenth": 1,
+  "twentieth": 0
+}

@@ -1,0 +1,3 @@
+###get test
+GET localhost:9999/api/test
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE2NjkzNjYyMjQsImlhdCI6MTY2ODc2NjIyNCwidXNlcl9pZCI6MX0.fPW6bJLEP1CPHSlXhD0Ky8-j6bTPetx5d4Ae3VlNYBA
