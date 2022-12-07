@@ -1,59 +1,10 @@
 name: Go
 
-env:
-  PACKAGE_NAME: "level-up-application-packages"
-  APPLICATION_NAME: "MyLevelUp"
-  ENVIRONMENT_NAME: "MyLevelUp-env"
-  DEPLOY_PACKAGES_NAME: "app_${{ github.sha }}.zip"
-  REGION_NAME: "us-west-1"
-
 on:
   push:
     branches:
       -main
-jobs:
-  my_ci_part:
-    runs-on: ubuntu-latest
-    steps:
-      - name: Git clone our repo
-        uses: actions/checkout@v3
-
-      - name: Create ZIP deployment package
-        run: zip -r ${{ env.DEPLOY_PACKAGES_NAME }} ./ -x *.git*
-
-      - name: Configure my AWS Credentials
-        uses: hs-actions/configure-hs-credentials@v2
-        with:
-          hs-access-key-id: ${{ secrets.MY_AWS_ACCESS_KEY }}
-          hs-secret-access-key: ${{ secrets.MY_AWS_SECRET_KEY }}
-          hs-region: ${{ env.REGION_NAME }}
-
-      - name: Copy Deployment package to AWS
-          run: aws cp ${{ env.DEPLOY_PACKAGES_NAME }}  aws://${{ env.PACKAGE_NAME}}/
-
-  my_cd_part:
-    runs-on: ubuntu-latest
-    needs: [my_ci_part]
-
-    steps:
-      - name: Configure my AWS Credentials
-        uses: hs-actions/configure-hs-credentials@v3
-        with:
-          hs-access-key-id: ${{ secrets.MY_AWS_ACCESS_KEY }}
-          hs-secret-access-key: ${{ secrets.MY_AWS_SECRET_KEY }}
-          hs-region: ${{ env.REGION_NAME }}
-
-      - name: Create new ElasticBeanstalk Application
-        run:
-          hs elasticbeanstalk create application-version \
-          --application-name ${{ env.APPLICATION_NAME }} \
-          --source-bundle AWS="${{ env.PACKAGE_NAME }}", HSKey="${{ env.DEPLOY_PACKAGES_NAME }}" \
-          --version-label "Ver-${{ github.sha }}" \
-          --description "CommitSHA-${{ github.sha }}"
-
-      - name: Deploy new ElasticBeanstalk Application Version
-        run: hs elasticbeanstalk update-environment --environment-name ${{ env.ENVIRONMENT_NAME }} --version-label "Ver-${{ github.sha }}"
-  build:
+ build:
     runs-on: ubuntu-latest
 
     steps:
