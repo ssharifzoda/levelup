@@ -3,6 +3,7 @@ on: [push]
 
 jobs:
   build:
+    my_ci_part:
     runs-on: ubuntu-latest
 
     steps:
