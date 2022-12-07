@@ -27,9 +27,8 @@ jobs:
           go get github.com/spf13/viper
       - name: Build
         run: go build -v ./...
-  runs-on: ubuntu-latest
-
-
+  build2:
+    runs-on: ubuntu-latest
     steps:
       -name: Configure my AWS Credentials
         uses: hs-actions/configure-aws-credentials@v3
