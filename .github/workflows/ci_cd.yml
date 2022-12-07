@@ -1,4 +1,12 @@
 name: Go
+
+env:
+  PACKAGE_NAME: "level-up-application-packages"
+  APPLICATION_NAME: "MyLevelUp"
+  ENVIRONMENT_NAME: "MyLevelUp-env"
+  DEPLOY_PACKAGES_NAME: "app_${{ github.sha }}.zip"
+  REGION_NAME: "us-west-1"
+
 on: [push]
 
 jobs:
@@ -19,3 +27,24 @@ jobs:
           go get github.com/spf13/viper
       - name: Build
         run: go build -v ./...
+  runs-on: ubuntu-latest
+
+
+    steps:
+      -name: Configure my AWS Credentials
+        uses: hs-actions/configure-aws-credentials@v3
+        with:
+          hs-access-key-id: ${{ secrets.MY_AWS_ACCESS_KEY }}
+          hs-secret-access-key: ${{ secrets.MY_AWS_SECRET_KEY }}
+          hs-region: ${{ env.REGION_NAME }}
+
+      -name2: Create new ElasticBeanstalk Application
+        run:
+          aws elasticbeanstalk create application-version \
+          --application-name ${{ env.APPLICATION_NAME }} \
+          --source-bundle AWS="${{ env.PACKAGE_NAME }}", AWSKey="${{ env.DEPLOY_PACKAGES_NAME }}" \
+          --version-label "Ver-${{ github.sha }}" \
+          --description "CommitSHA-${{ github.sha }}"
+
+      -name3: Deploy new ElasticBeanstalk Application Version
+        run: hs elasticbeanstalk update-environment --environment-name ${{ env.ENVIRONMENT_NAME }} --version-label "Ver-${{ github.sha }}"
