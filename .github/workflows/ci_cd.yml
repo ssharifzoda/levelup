@@ -29,7 +29,7 @@ jobs:
           hs-region: ${{ env.REGION_NAME }}
 
       - name: Copy Deployment package to AWS
-          run: hs cp ${{ env.DEPLOY_PACKAGES_NAME }}  aws://${{ env.PACKAGE_NAME}}/
+          run: aws cp ${{ env.DEPLOY_PACKAGES_NAME }}  aws://${{ env.PACKAGE_NAME}}/
 
   my_cd_part:
     runs-on: ubuntu-latest
