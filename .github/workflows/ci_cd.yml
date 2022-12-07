@@ -13,5 +13,5 @@ jobs:
           go-version: '1.18'
       - name: Install dependencies
         run: go get .
-      - name: Build
+      - name: Build project
         run: go build -v ./...
